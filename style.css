@@ -76,6 +76,27 @@ footer{
     text-align: left;
 }
 
+summary {
+    padding: 15px;
+    float:left;
+    background-color: dimgray;
+
+}
+summary:hover{
+    color: aqua;
+    transition: 0.6s;
+}
+details{
+    background-color: dimgray;
+    border: 3px solid black;
+    position: absolute;
+}
+
+#head {
+    padding: 15px;
+}
+
+
 
 
 
