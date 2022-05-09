@@ -13,7 +13,9 @@ body {
     text-align: center;
     color: white;
     font-size: 180%;
+    text-decoration: underline;
 }
+
 
 nav{
     color: white;
@@ -24,16 +26,20 @@ nav{
     font-family: "Arial Black", Gadget, sans-serif;
     font-size: 170%;
     display: inline-block;
-    line-height: 200px;
+    line-height: 145px;
 }
+
+
 
 a:link, a:visited {
     color:white;
     text-decoration: none;
+    transition: 0.6s;
 }
 
 a:hover, a:active {
     color: aqua;
+    transition: 1s;
 }
 
 article{
@@ -46,6 +52,8 @@ article{
     position: absolute;
     font-size: 150%;
     color: white;
+    text-align: center;
+    overflow-y: auto;
 }
 
 footer{
@@ -58,6 +66,14 @@ footer{
     font-size: 120%;
     color: white;
 
+}
+
+#currentsite {
+    color:aqua;
+}
+
+#text {
+    text-align: left;
 }
 
 
