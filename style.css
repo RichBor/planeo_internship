@@ -1,0 +1,35 @@
+body {
+    background-color: lightgray;
+}
+#wrapper {
+    margin: 10px;
+
+}
+
+.header {
+    margin: 10px;
+    padding: 20px;
+    background-color: darkgray;
+    text-align: center;
+    color: white;
+    font-size: 180%;
+    position: sticky;
+    top: 0;
+}
+
+nav{
+    margin: 10px;
+    width: 300px;
+    background-color: darkgray;
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: 130%;
+}
+
+article{
+    background-color: darkgray;
+    padding: 20px;
+    width: 70%;
+}
+
+
+
