@@ -1,0 +1,72 @@
+body {
+    background-color: lightgray;
+}
+#wrapper {
+    margin: 10px;
+
+}
+
+.header {
+    margin: 10px;
+    padding: 20px;
+    background-color: darkgray;
+    text-align: center;
+    color: white;
+    font-size: 180%;
+    text-decoration: underline;
+}
+
+nav{
+    color: white;
+    margin: 10px;
+    width: 300px;
+    height: 700px;
+    background-color: darkgray;
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: 170%;
+    display: inline-block;
+    line-height: 200px;
+}
+
+
+
+a:link, a:visited {
+    color:white;
+    text-decoration: none;
+    transition: 0.6s;
+}
+
+a:hover, a:active {
+    color: aqua;
+    transition: 1s;
+}
+
+article{
+    margin: 10px;
+    padding: 40px;
+    width: 1450px;
+    height: 620px;
+    background-color: darkgray;
+    display: inline-block;
+    position: absolute;
+    font-size: 150%;
+    color: white;
+    text-align: center;
+}
+
+footer{
+    position: center;
+    background-color: darkgray;
+    margin-left: 20px;
+    margin-right: 18px;
+    padding:5px;
+    text-align: center;
+    font-size: 120%;
+    color: white;
+
+}
+
+
+
+
+
