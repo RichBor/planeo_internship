@@ -24,6 +24,16 @@ nav{
     font-family: "Arial Black", Gadget, sans-serif;
     font-size: 170%;
     display: inline-block;
+    line-height: 200px;
+}
+
+a:link, a:visited {
+    color:white;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    color: aqua;
 }
 
 article{
@@ -39,14 +49,18 @@ article{
 }
 
 footer{
+    position: center;
     background-color: darkgray;
-    margin: 20px;
+    margin-left: 20px;
+    margin-right: 18px;
     padding:5px;
     text-align: center;
     font-size: 120%;
     color: white;
 
 }
+
+
 
 
 
