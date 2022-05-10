@@ -39,8 +39,9 @@ nav:hover{
 
 article{
     margin: 10px;
+    margin-right: 27px;
     padding: 40px;
-    width: 76.6%;
+    width: border-box;
     height: 620px;
     background-color: darkgray;
     display: inline-block;
@@ -66,7 +67,7 @@ footer{
 }
 
 @media screen and (max-width: 1000px) {
-    .header, nav, article, footer {
+    .header, nav, article {
         width: auto;
     }
 
@@ -82,12 +83,12 @@ footer{
 
     article {
         display: block;
-        margin-right: 26px;
+        margin-right: 27px;
+        padding: 5px;
     }
 
     footer {
-        position: relative;
-        float: bottom;
+        display: none;
     }
 
 }
