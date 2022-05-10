@@ -4,6 +4,7 @@ body {
 
 #wrapper {
     margin: 10px;
+    position: relative;
 }
 
 .header {
@@ -41,11 +42,12 @@ article{
     margin: 10px;
     margin-right: 27px;
     padding: 40px;
-    width: border-box;
+    width: 78%;
     height: 620px;
     background-color: darkgray;
     display: inline-block;
     position: absolute;
+    float: right;
     font-size: 150%;
     color: white;
     text-align: center;
@@ -141,7 +143,7 @@ details{
 #w3{
     margin-bottom: 50px;
     display: inline-block;
-    background-image: url("imgs/scr1.png");
+    background-image: url("../imgs/scr1.png");
     width: 46%;
     height: 202px;
     border: 3px solid black;
@@ -149,7 +151,8 @@ details{
 }
 
 #bodyex{
-    background-image: url("imgs/scr2.png");
+    background-image: url("../imgs/scr2.png");
+    width: 45%;
     height: 353px;
     display: inline-block;
     border: 3px solid black;
@@ -157,7 +160,7 @@ details{
 }
 
 #styleex{
-    background-image: url("imgs/scr3.png");
+    background-image: url("../imgs/scr3.png");
     height: 564px;
     width: 55%;
     display: inline-block;
@@ -166,7 +169,7 @@ details{
 }
 
 #stylelink{
-    background-image: url("imgs/scr4.png");
+    background-image: url("../imgs/scr4.png");
     height: 115px;
     width: 45%;
     display: inline-block;

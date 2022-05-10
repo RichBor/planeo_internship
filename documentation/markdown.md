@@ -1,11 +1,15 @@
 # Dokumentation über Markdown
+
 - - -
+
 ## Was ist Markdown?
  Markdown ist eine vereinfachte Auszeichnungssprache.
  Es wurde entwickelt, um die Ausgangsform des Contents schon
  vor der Konvertierung lesbar zu halten.
  Es hat einen einfachen Syntax, der basically HTML Code generiert.
+
 - - -
+
 ## Wie funktioniert Markdown?
 - Mit Markdown kann man ganz einfach Inline Texte z.B **Dick** (mit **) oder _Kursiv_ (mit _) formatieren.
 - Mit # kann man Texte zu Titeln umformatieren, dabei funktioniert es so wie h1, h2 etc.
