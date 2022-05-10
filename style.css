@@ -85,6 +85,7 @@ footer{
         display: block;
         margin-right: 27px;
         padding: 5px;
+
     }
 
     footer {
@@ -141,16 +142,16 @@ details{
     margin-bottom: 50px;
     display: inline-block;
     background-image: url("imgs/scr1.png");
-    width: 538px;
-    height: 280px;
+    width: 46%;
+    height: 202px;
     border: 3px solid black;
     color: black;
 }
 
 #bodyex{
     background-image: url("imgs/scr2.png");
+    width: 45%;
     height: 353px;
-    width: 550px;
     display: inline-block;
     border: 3px solid black;
     margin-bottom: 50px;
@@ -159,7 +160,7 @@ details{
 #styleex{
     background-image: url("imgs/scr3.png");
     height: 564px;
-    width: 664px;
+    width: 55%;
     display: inline-block;
     border: 3px solid black;
     margin-bottom: 50px;
@@ -168,7 +169,7 @@ details{
 #stylelink{
     background-image: url("imgs/scr4.png");
     height: 115px;
-    width: 534px;
+    width: 45%;
     display: inline-block;
     border: 3px solid black;
     margin-bottom: 50px;
