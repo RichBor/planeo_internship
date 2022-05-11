@@ -61,13 +61,30 @@ und damit auch übersichtlicher zu machen:
 -     <p color=red> Dies ist ein Paragraph </p>
     - Paragraphen werden benutzt um eine Zeile an Text zu gruppieren und ggf.
       letztendlich entweder Inline oder mit CSS zu gestalten.
+
 -     <div class="box">  </div>
-    - Das div Element teilt ein Dokument in Sektionen oder Divisionen ein, um z.B
+    - Das div Element teilt ein Dokument in Sektionen oder Divisionen in Blöcke ein, um z.B
       eine Box zu erschaffen, in der bestimmter Content steht.
       Mit CSS kann man dann auf die Klasse (in dem Beispiel) .box zugreifen
       und auch die Box als gesamtes gestalten.
 
-#### Listen
+-     <span style="background-color:lightblue"> Text! </span>
+    - Das span Element ist eigentlich genau wie das div Element, nur dass es nicht
+      block ist sondern inline. Es teilt also keine Sektionen in blöcke, sondern
+      in Abschnitte in z.B Texten ein, die dann mit CSS oder JavaScript angezapft werden können.
+
+-     Dies<br>ist<br>ein<br>Text
+    - br (break row) wird benutzt,
+      um die Zeile zu brechen und damit ein newline zu generieren:\
+      ![br](../imgs/br%20example.png)
+
+-     <b>mit dem b tag mache ich Text fett</b>
+    - <b>mit dem b tag mache ich Text fett</b>.
+
+-     <q>Quotationmarks</q>
+    - Text, der mit dem tag q eingebettet wird, wird in <q>Quotationmarks</q> eingehüllt.
+
+#### Lists
 
 ###### Ordered Lists
 
@@ -89,19 +106,12 @@ Das eignet sich zum Beispiel für Schritte von Rezepte oder Anleitungen.
           <li> Aufzählung</li>
           <li> Aufzählung</li>
         </ul>
+
 So sieht es dann im Browser aus:\
 ![ul](../imgs/ul%20example.png)\
 Der Inhalt wird unsortiert einfach mit Punkten aufgezählt.
 Das eignet sich zum Beispiel für die Zutatenliste eines Rezepts.
 
-#### Kommentare
-
--     <!-- Dies wäre ein Kommentar -->
-Kommentare können benutzt werden um Code zu strukturieren und um
-z.B Mitarbeiter aufzuklären was da im Code eigentlich steht und
-wofür es da ist.\
-Kommentare werden nicht als HTML Code interpretiert und somit nicht
-aufgefangen.
 
 - - -
 
@@ -110,16 +120,63 @@ aufgefangen.
 Die Tags in HTML sind dazu da, den Content auf die Seite zu kriegen,
 und CSS um diesen zu gestalten.
 
-### Links
+#### Links
 
 -     <a href="https://www.planeo.de">Planeo Hyperlink!</a>
+
 Hyperlinks werden mit dem tag "a" verlinkt.\
 Als value für das Attribut "href" gibt man dann z.B eine Webadresse an.\
 <a href="https://www.planeo.de">Planeo.de Hyperlink!</a>\
 Wenn man zwischen Websiten navigiert muss man aber die volle Webadresse benutzen.
 (https://www.*)
 
+#### Comments
 
+-     <!-- Dies wäre ein Kommentar -->
+
+Kommentare können benutzt werden um Code zu strukturieren und um
+z.B Mitarbeiter aufzuklären was da im Code eigentlich steht und
+wofür es da ist.\
+Kommentare werden nicht als HTML Code interpretiert und somit nicht
+aufgefangen.
+
+#### Headings
+
+-     <h1>Überschrift</h1>
+
+Mit den tags h[1-6] definiert man Überschriften von verschiedenen
+Größen, wobei h1 das größte und h6 das kleinste ist:\
+\
+![headings](../imgs/headings.png)
+
+### Multimedia
+
+#### Images, Videos and Audio
+
+-     <img src="../imgs/headings.png" alt="clueless">
+    - Mit dem tag img kann man Bilder einbetten.\
+      Mit src gibt man den Pfad an, und mit alt gibt man eine Art Backup-Text
+      an, falls das Bild nicht lädt.
+
+-     <video controls><source src="video.mp4" type="video/mp4"></video>
+    - Im video Element gibt man den Pfad des Videos mit "source src=" und den Typ
+      mit "type =".
+      Das Attribut controls aktiviert die Kontrolle über den Video-Player (so wie play, pause und volume)
+
+-     <audio controls><source src="audio.mp3" type="video/mpeg"></audio>
+    - Im audio Element gibt man den Pfad der Audio mit "source src=" und den Typ
+      mit "type =".
+      Das Attribut controls aktiviert die Kontrolle über den Audio-Player (so wie play, pause und volume)
+
+#### Favicon
+
+Ein Favicon ist das kleine Bild links bei den Browser-Tabs:\
+\
+![favicon](../imgs/github%20favicon.png)\
+\
+Man verlinkt sie mit dem link Element im Head:
+-     <link rel="icon" type="image/x-icon" href="/imgs/favicon.ico">
+Auf Seiten wie https://www.favicon.cc/ kann man kostenlos eigene Favicons pixeln.
 
 
 
