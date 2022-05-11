@@ -52,6 +52,41 @@ und so zusammen arbeiten und Lösungen finden.\
 
 - - -
 
+### .gitignore
+Jede Datei in Git hat einen von drei Status.\
+Entweder ist sie "tracked", "untracked" oder ignored.\
+Eine geaddete, oder schon comittete ist "tracked" und wird beim Befehl
+"git status" grün angezeigt.\
+"untracked" sind die Dateien die noch nicht committed wurden oder
+"ignored" Dateien.\
+Wenn man Dateien im Verzeichnis hat,
+die nicht hochgeladen werden sollen/müssen,
+wie z.B temporäre Dateien oder Passwörter,
+dann kann man sie "ignorieren".\
+Das macht man in einer .gitignore Datei.\
+Dort kann man einfach ganze Verzeichnisse oder
+einzelne Dateien mit deren Pfad
+ignorieren und kann so verhindern,
+dass sie mit einem "git add ." ausversehen hochgeladen werden.
+\
+\
+In meiner .gitignore ist das Verzeichnis .idea ignoriert, weil man es nicht
+im remote repository braucht:\
+\
+![gitignore](../imgs/gitignore%20example.png)\
+Man kann auch z.B ganze Dateitypen mit *.txt ignorieren.\
+Man kann mit den sogenannten "Globbing Mustern"
+ganze Dateigruppen auswählen.\
+[Hier](https://www.atlassian.com/de/git/tutorials/saving-changes/gitignore) gibt es einige Beispiele.
+\
+\
+Eine gitignore wird generell mit hochgeladen, damit andere Teilnehmer
+an dem Projekt die gleichen Dateien auch ignorieren und nicht hochladen.\
+Für ein "persönliches gitgnore" gibt es die exclude Datei in
+"/(repository)/.git/info/exclude", da das Verzeichnis .git automatisch ignoriert wird.
+
+- - -
+
 ### git fetch, git merge und git pull
 
 Diese drei Befehle sind dazu da, um Änderungen aus dem remote Repo mit
@@ -67,6 +102,7 @@ Also wie ein git push, nur anders herum.
     - "git pull" macht einfach beides gleichzeitig
 
 - - -
+
 Einfache Visualisierung, wie die Commands auf den Workspace und
 den lokalem/remote repository wirkt:\
 ![visualisierung](../imgs/visualisierung.png)

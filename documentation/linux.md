@@ -35,6 +35,8 @@
 - nano (datei).(typ)
     - [Nano](https://www.nano-editor.org/) ist ein Editor, der dich Dateien
       direkt im Terminal editieren lässt
+- vi
+
 - rm (datei).(typ) -> remove
     - remove lässt dich eine Datei löschen
 - rm -rf -> remove recursive forced
