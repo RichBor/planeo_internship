@@ -26,7 +26,6 @@ Es hat einen einfachen Syntax, der basically HTML Code generiert.
 
 - Mit drei Strichen (---) oder Sternen (***) kann man Segmente mit einem
   Trennstrich trennen.
--
 - Aufzählungen sind auch ganz einfach entweder unsortiert mit - ,
   oder sortiert mit Zahlen, wie 1., 2., 3., ... ,möglich.
 - Ich kann auch Links ([YouTube](https://youtube.com) = [YouTube]\(https://youtube.com)
