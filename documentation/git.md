@@ -53,6 +53,7 @@ und so zusammen arbeiten und Lösungen finden.\
 - - -
 
 ### .gitignore
+
 Jede Datei in Git hat einen von drei Status.\
 Entweder ist sie "tracked", "untracked" oder ignored.\
 Eine geaddete, oder schon comittete ist "tracked" und wird beim Befehl
@@ -103,8 +104,25 @@ Also wie ein git push, nur anders herum.
 
 - - -
 
-Einfache Visualisierung, wie die Commands auf den Workspace und
-den lokalem/remote repository wirkt:\
+### Branches
+
+Ein "Branch" ist, wie der Name sagt, ein eigenständiger Zweig,
+der unabhängig vom Master branch sein eigenes Ding macht.
+So könnte z.B ein "test" branch existieren, auf dem man Tests ausführt.
+
+- git branch -a
+    - Zeigt alle Branches an
+- git checkout -b (name)
+    - erstellt neuen Branch unter (name)
+- git checkout (branch)
+    - wechselt zu einem anderen branch
+- git push origin (branch)
+    - pusht die Dateien zum Ziel-branch
+
+- - -
+
+Einfache Visualisierung, wie die Befehle auf den Workspace und
+den local/remote repository wirkt:\
 ![visualisierung](../imgs/visualisierung.png)
 
 
