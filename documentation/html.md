@@ -120,7 +120,12 @@ und damit auch übersichtlicher zu machen:
       </ol>
 
 So sieht es dann im Browser aus:\
-![ol](../imgs/markdown/ol%20example.png)\
+<ol>
+    <li> Schritt</li>
+    <li> Schritt</li>
+    <li> Schritt</li>
+</ol>
+
 Der Inhalt der Liste wird nummeriert, also sortiert.\
 Das eignet sich zum Beispiel für Schritte von Rezepte oder Anleitungen.
 
@@ -132,8 +137,13 @@ Das eignet sich zum Beispiel für Schritte von Rezepte oder Anleitungen.
           <li> Aufzählung</li>
         </ul>
 
-So sieht es dann im Browser aus:\
-![ul](../imgs/markdown/ul%20example.png)\
+So sieht es dann im Browser aus:<br>
+<ul>
+    <li> Aufzählung</li>
+    <li> Aufzählung</li>
+    <li> Aufzählung</li>
+</ul>
+
 Der Inhalt wird unsortiert einfach mit Punkten aufgezählt.
 Das eignet sich zum Beispiel für die Zutatenliste eines Rezepts.
 
@@ -235,9 +245,12 @@ kann man dann die Art des Inputs angeben, standardmäßig **text**.
        </form>
     - Mit ```<label for="">...</label>``` kann man sozusagen dem **input** eine Überschrift geben und so
       ihren Nutzen erklären.\
-      Dafür muss man beim Label dann die id des inputs angeben.\
-      So sieht das dann im Browser aus:\
-      ![form example](../imgs/markdown/form%20example.png)
+      Dafür muss man beim Label dann die id des inputs angeben.<br><br>
+      So sieht das dann im Browser aus:<br><br>
+      <form>
+         <label for="test">Testtext</label><br>
+         <input type="text" id="test" name="test">
+      </form>
 
 ###### Submit
 
@@ -247,8 +260,13 @@ kann man dann die Art des Inputs angeben, standardmäßig **text**.
          <input type="submit">
       </form>
     - Mit ```<input type="submit">``` kann man einen Submit button hinzufügen,
-      um das Formular abzuschicken:\
-      ![submit](../imgs/markdown/submit%20example.png)
+      um das Formular abzuschicken:<br><br>
+      So sieht es dann im Browser aus:<br><br>
+      <form>
+         <label for="test">Testtext</label><br>
+         <input type="text" id="test" name="test">
+         <input type="submit">
+      </form>
 
 ###### form action
 
@@ -288,8 +306,13 @@ Dazu kommt das 3000 character limit bei **get**, welches es bei **post** nicht g
         <input type="submit">
       </form>
     - Mit dem Element ```<textarea></textarea>``` kann man ein Textfeld mit vorgegebener
-      Basis-größe erschaffen.\
-      ![textarea](../imgs/markdown/textarea%20example.png)
+      Basis-größe erschaffen.<br><br>
+      So sieht es dann im Browser aus:<br><br>
+      <form>
+        <label for="test">Testtext</label><br>
+        <textarea id="test" rows="4" cols="30">Das ist ein 4 Reihen Textfeld</textarea><br>
+        <input type="submit">
+      </form>
 
 ###### select
 
@@ -303,8 +326,17 @@ Dazu kommt das 3000 character limit bei **get**, welches es bei **post** nicht g
          <input type="submit">
       </form>
     - Mit dem ```<select></select>``` Element kann man statisches dropdown-menü erstellen,
-      bei dem nur die vorgegebenen optionen verfügbar sind:\
-      ![select](../imgs/markdown/select%20example.png)
+      bei dem nur die vorgegebenen optionen verfügbar sind:<br>
+      -So sieht es dann im Browser aus:<br><br>
+      <form>
+         <label for="test">Lieblingsobst</label><br>
+         <select id="test">
+            <option value="Apfel">Apfel</option>
+            <option value="Birne">Birne</option>
+            <option value="Orange">Orange</option>
+         </select>
+         <input type="submit">
+      </form>
 
 ###### button
 
@@ -373,7 +405,7 @@ Mit ```<legend></legend>``` gibt man diesen Feldern dann eine "Überschrift":
 - Eine neue table-row öffnet man mit ```<tr></tr>```
 - Für Überschriften benutzt man table-heading ```<th></th>``` für Zellen
 - Für normale Zellen benutzt man table-data ```<td></td>```
-- Man kann der ganzen Tabelle mit ```<caption></caption>``` auch eine Überschrift geben\
+- Man kann der ganzen Tabelle mit ```<caption></caption>``` auch eine Überschrift geben
 
 So sieht das dann im Browser aus:
 <table>
@@ -398,7 +430,7 @@ So sieht das dann im Browser aus:
        </tr>
       </table>
 
-## Classes
+## Classes & IDs
 
 
 
