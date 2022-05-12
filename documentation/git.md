@@ -74,7 +74,7 @@ dass sie mit einem "git add ." ausversehen hochgeladen werden.
 In meiner .gitignore ist das Verzeichnis .idea ignoriert, weil man es nicht
 im remote repository braucht:\
 \
-![gitignore](../imgs/gitignore%20example.png)\
+![gitignore](../imgs/markdown/gitignore%20example.png)\
 Man kann auch z.B ganze Dateitypen mit *.txt ignorieren.\
 Man kann mit den sogenannten "Globbing Mustern"
 ganze Dateigruppen auswählen.\
@@ -123,7 +123,7 @@ So könnte z.B ein "test" branch existieren, auf dem man Tests ausführt.
 
 Einfache Visualisierung, wie die Befehle auf den Workspace und
 den local/remote repository wirkt:\
-![visualisierung](../imgs/visualisierung.png)
+![visualisierung](../imgs/markdown/visualisierung.png)
 
 
 

@@ -31,4 +31,4 @@ Es hat einen einfachen Syntax, der basically HTML Code generiert.
 - Ich kann auch Links ([YouTube](https://youtube.com) = [YouTube]\(https://youtube.com)
   und\
   natürlich Bilder (![Planeo]\(../imgs/planeo.jpeg)) hinzufügen:\
-  ![Planeo](../imgs/planeo.jpeg)
+  ![Planeo](../imgs/markdown/planeo.jpeg)
