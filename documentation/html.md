@@ -432,15 +432,70 @@ So sieht das dann im Browser aus:
 
 ## Classes & IDs
 
+Klassen und IDs sind dazu da, um Gruppen von, oder einzele, Elemente
+direkt ansprechen zu können, sei es z.B.
+mit CSS-Design oder Scripts von JavaScript.
 
+Der Unterschied von Classes und IDs ist, dass IDs einzigarting sein müssen,
+und Classes zu so vielen Elementen benutzt werden können wie man will. <br>
+So kann man zum Beispiel einen wiederkehrenden Button mit einer Klasse versehen,
+und diese per CSS ansteuern, damit man ihn nur einmal designen muss. <br>
+<br>Beispiele:<br>
 
+- ```<button class="continuebutton">```
+- ``` <div id="article"> ```
 
+Ansteuern kann man sie dann in CSS so:
 
+- Classes
+    - Mit einem Punkt. Also nach dem Beispiel oben: ``` .continuebutton{} ```
+- IDs
+    - Mit einem #. Also nach dem Beispiel oben: ``` #article{} ```
 
+## Iframe
 
+Ein inline frame wird benutzt, um ein anderes Dokument in deine Seite einzubetten.
 
+    <iframe src="../index.html" width="500px" height="500px" title="iframe"></iframe>
 
+So kann man, in dem Beispiel, die index.html mit 500x500px in die Seite einbetten
 
+## Responsive Web Design
 
+Responsive Web Design bedeutet eine Website zu erstellen, die auf allen
+Geräten und Monitoren gut aussieht.\
+Die Seite muss sich also an verschiedene Breiten anpassen.<br><br>
 
+#### How to make a responsive web page
+
+###### responsive viewport
+
+-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    - Mit diesen Attributen sagt man der Website, dass sie sich an die Breite
+      des Gerätes anpassen soll
+
+###### responsive images
+
+-     <img src="bild." style="max-width: 100%">
+    - Wenn man die max-width von einem Bild auf 100% stellt, skaliert sie automatisch responsive.
+      Aber nie höher als die Originalgröße.
+
+###### responsive text
+
+-     <h1 style="font-size:10vw">Responsive Text!</h1>
+
+Man kann Text responsive machen, indem man die Textgröße in ```vw``` angibt.\
+```vw``` bedeutet viewport.
+
+###### Media Query
+
+-     @media screen and (max-width: 800px) {
+       sidebar {
+        display:block;
+        width: 100%;
+       }
+      }
+  - Das macht, dass der sidebar container ab einer Breite von maximal 800px
+  zum Block-element wird und sich somit über dem main content befindet
+  und nicht mehr daneben.
 
