@@ -377,6 +377,8 @@ Mit ```<legend></legend>``` gibt man diesen Feldern dann eine "Überschrift":
     </fieldset>
 </form>
 
+- - -
+
 ## HTML Tables
 
     <table>
@@ -430,7 +432,11 @@ So sieht das dann im Browser aus:
        </tr>
       </table>
 
-## Classes & IDs
+- - -
+
+## Miscellaneous HTML
+
+### Classes & IDs
 
 Klassen und IDs sind dazu da, um Gruppen von, oder einzele, Elemente
 direkt ansprechen zu können, sei es z.B.
@@ -452,7 +458,7 @@ Ansteuern kann man sie dann in CSS so:
 - IDs
     - Mit einem #. Also nach dem Beispiel oben: ``` #article{} ```
 
-## Iframe
+### Iframe
 
 Ein inline frame wird benutzt, um ein anderes Dokument in deine Seite einzubetten.
 
@@ -460,7 +466,7 @@ Ein inline frame wird benutzt, um ein anderes Dokument in deine Seite einzubette
 
 So kann man, in dem Beispiel, die index.html mit 500x500px in die Seite einbetten
 
-## Responsive Web Design
+### Responsive Web Design
 
 Responsive Web Design bedeutet eine Website zu erstellen, die auf allen
 Geräten und Monitoren gut aussieht.\
@@ -495,7 +501,7 @@ Man kann Text responsive machen, indem man die Textgröße in ```vw``` angibt.\
         width: 100%;
        }
       }
-  - Das macht, dass der sidebar container ab einer Breite von maximal 800px
-  zum Block-element wird und sich somit über dem main content befindet
-  und nicht mehr daneben.
+    - Das macht, dass der sidebar container ab einer Breite von maximal 800px
+      zum Block-element wird und sich somit über dem main content befindet
+      und nicht mehr daneben.
 
