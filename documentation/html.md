@@ -377,6 +377,113 @@ Mit ```<legend></legend>``` gibt man diesen Feldern dann eine "Überschrift":
     </fieldset>
 </form>
 
+###### radio
+
+-     <form action="test.php">
+        <fieldset>
+            <legend>Lieblingsauto?</legend>
+            <input type="radio" id="y" name="fav_car" value="mercedes">
+            <label for="y">Mercedes</label><br>
+            <input type="radio" id="n" name="fav_car" value="bmw">
+            <label for="n">BMW</label><br>
+            <input type="radio" id="n" name="fav_car" value="VW">
+            <label for="n">VW</label><br>
+            <input type="submit">
+        </fieldset>
+
+      </form>
+
+Mit dem **input-type** ```<input type="radio">``` kann man Gruppen von
+Auswahl bilden, von der man aber immer nur eine Option auswählen kann.
+
+<form>
+    <fieldset>
+        <legend>Lieblingsauto?</legend>
+        <input type="radio" id="y" name="fav_car" value="mercedes">
+        <label for="y">Mercedes</label><br>
+        <input type="radio" id="n" name="fav_car" value="bmw">
+        <label for="n">BMW</label><br>
+        <input type="radio" id="n" name="fav_car" value="VW">
+        <label for="n">VW</label><br>
+        <input type="submit">
+    </fieldset>
+</form>
+
+###### file
+
+-     <form action="test.php" method="post">
+        <fieldset>
+         <legend>Anhang</legend>
+         <label for="sfile">Select one file: </label>
+         <input type="file" id="sfile" name="anhang"> <br> <br>
+         <input type="submit">
+        </fieldset>
+      </form>
+Mit dem **input-type** ```<input type="file">``` kann man die möglichkeit geben,
+eine Datei hochzuladen. Um zu erlauben, dass mehrere Dateien hochgeladen werden,
+kann man dem Element ```<input>``` das Attribut ```multiple``` geben.\
+Bei Datei-Uploads muss die **form-method** ```<form method="post">``` sein!
+
+<form method="post">
+    <fieldset>
+     <legend>Anhang</legend>
+     <label for="sfile">Select one file: </label>
+     <input type="file" id="sfile" name="anhang"> <br> <br>
+     <input type="submit">
+    </fieldset>
+</form>
+
+###### hidden
+
+-     <form>
+        <fieldset>
+         <legend>Hidden Input!</legend>
+         <label for="test">Test Text</label>
+         <input type="text" id="test" name="Text">
+         <input type="hidden" id="hvalue" name="hvalue" value="123">
+         <input type="submit">
+        </fieldset>
+      </form>
+
+Mit einem **hidden-input** kann man ein **value** zu einem Formular hinzufügen,
+dass der Nutzer nicht einfach sehen und bearbeiten kann.\
+Mit developer tools und inspect element kann man diesen input trotzdem bearbeiten.\
+Es ist also nicht sicher!
+
+###### checkbox
+
+-     <form>
+        <fieldset>
+         <legend>Zutaten Pizza</legend>
+         <input type="checkbox" id="ingredient1" name="ingredient" value="pepperoni">
+         <label for="ingredient1">Pepperoni</label> <br>
+         <input type="checkbox" id="ingredient2" name="ingredient" value="zwiebel">
+         <label for="ingredient2">Zwiebel</label> <br>
+         <input type="checkbox" id="ingredient3" name="ingredient" value="doenerfleisch">
+         <label for="ingredient3">Doenerfleisch</label> <br>
+         <input type="checkbox" id="ingredient4" name="ingredient" value="schinken">
+         <label for="ingredient4">Schinken</label> <br> <br>
+         <input type="submit">
+        </fieldset>
+      </form>
+Mit dem **checkbox-input** kann man eine Gruppe von Optionen erstellen,
+von der man so viele wie man will, oder auch garkeine Option auswählen kann.
+
+<form>
+    <fieldset>
+     <legend>Zutaten Pizza</legend>
+     <input type="checkbox" id="ingredient1" name="ingredient" value="pepperoni">
+     <label for="ingredient1">Pepperoni</label> <br>
+     <input type="checkbox" id="ingredient2" name="ingredient" value="zwiebel">
+     <label for="ingredient2">Zwiebel</label> <br>
+     <input type="checkbox" id="ingredient3" name="ingredient" value="doenerfleisch">
+     <label for="ingredient3">Doenerfleisch</label> <br>
+     <input type="checkbox" id="ingredient4" name="ingredient" value="schinken">
+     <label for="ingredient4">Schinken</label> <br> <br>
+     <input type="submit">
+    </fieldset>
+</form>
+
 - - -
 
 ## HTML Tables
