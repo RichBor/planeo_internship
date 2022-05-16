@@ -181,6 +181,22 @@ details {
     margin-bottom: 50px;
 }
 
+.listexample {
+    padding-left: 50px;
+    text-align: left;
+}
+
+#divexample{
+    position: center;
+    text-align: center;
+    background-color: black;
+    color: white;
+    width: 500px;
+    height: 200px;
+    margin: 50px;
+    border: solid white 2px;
+}
+
 
 
 
