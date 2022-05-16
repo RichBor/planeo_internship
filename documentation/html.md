@@ -419,6 +419,7 @@ Auswahl bilden, von der man aber immer nur eine Option auswählen kann.
          <input type="submit">
         </fieldset>
       </form>
+
 Mit dem **input-type** ```<input type="file">``` kann man die möglichkeit geben,
 eine Datei hochzuladen. Um zu erlauben, dass mehrere Dateien hochgeladen werden,
 kann man dem Element ```<input>``` das Attribut ```multiple``` geben.\
@@ -466,6 +467,7 @@ Es ist also nicht sicher!
          <input type="submit">
         </fieldset>
       </form>
+
 Mit dem **checkbox-input** kann man eine Gruppe von Optionen erstellen,
 von der man so viele wie man will, oder auch garkeine Option auswählen kann.
 
@@ -518,26 +520,122 @@ von der man so viele wie man will, oder auch garkeine Option auswählen kann.
 
 So sieht das dann im Browser aus:
 <table>
-       <caption>Überstunden</caption>
-       <tr>
-         <th>Montag</th>
-         <th>Dienstag</th>
-         <th>Mittwoch</th>
-         <th>Donnerstag</th>
-         <th>Freitag</th>
-         <th>Samstag</th>
-         <th>Sonntag</th>
-       </tr>
-       <tr style="text-align: center">
-         <td>1</td>
-         <td>2</td>
-         <td>0</td>
-         <td>0</td>
-         <td>0</td>
-         <td>2</td>
-         <td>0</td>
-       </tr>
-      </table>
+   <caption>Überstunden</caption>
+   <tr>
+     <th>Montag</th>
+     <th>Dienstag</th>
+     <th>Mittwoch</th>
+     <th>Donnerstag</th>
+     <th>Freitag</th>
+     <th>Samstag</th>
+     <th>Sonntag</th>
+   </tr>
+   <tr style="text-align: center">
+     <td>1</td>
+     <td>2</td>
+     <td>0</td>
+     <td>0</td>
+     <td>0</td>
+     <td>2</td>
+     <td>0</td>
+   </tr>
+</table>
+
+### Colspan
+
+Ein Colspan wird benutzt, um horizontale Zellen zu verbinden:
+
+    <table>
+        <caption>Schüler Grundschule</caption>
+        <tr>
+          <th>Name</th>
+          <th>Vorname</th>
+          <th colspan="2">Telefonnummern Eltern</th>
+        </tr>
+        <tr>
+          <td>Schmidt</td>
+          <td>Finn</td>
+          <td>1234567890</td>
+          <td>0987654321</td>
+        </tr>
+        <tr>
+          <td>Meier</td>
+          <td>Alex</td>
+          <td>1234567890</td>
+          <td>0987654321</td>
+        </tr>
+    </table>
+
+<table>
+    <caption>Schüler Grundschule</caption>
+    <tr>
+      <th>Name</th>
+      <th>Vorname</th>
+      <th colspan="2">Telefonnummern Eltern</th>
+    </tr>
+    <tr>
+      <td>Schmidt</td>
+      <td>Finn</td>
+      <td>1234567890</td>
+      <td>0987654321</td>
+    </tr>
+    <tr>
+      <td>Meier</td>
+      <td>Alex</td>
+      <td>1234567890</td>
+      <td>0987654321</td>
+    </tr>
+</table>
+
+### Rowspan
+
+Ein Rowspan ist dazu da, um vertikale Zellen zu verbinden:
+
+    <table>
+        <caption>Schüler Grundschule</caption>
+        <tr>
+          <th>Name</th>
+          <td>Schmidt</td>
+          <td>Meier</td>
+        </tr>
+        <tr>
+          <th>Vorname</th>
+          <td>Finn</td>
+          <td>Alex</td>
+        </tr>
+        <tr>
+          <th rowspan="2">Telefonnummern<br>Eltern</th>
+          <td>1234567890</td>
+          <td>1234567890</td>
+        </tr>
+        <tr>
+          <td>0987654321</td>
+          <td>0987654321</td>
+        </tr>
+    </table>
+
+<table>
+    <caption>Schüler Grundschule</caption>
+    <tr>
+      <th>Name</th>
+      <td>Schmidt</td>
+      <td>Meier</td>
+    </tr>
+    <tr>
+      <th>Vorname</th>
+      <td>Finn</td>
+      <td>Alex</td>
+    </tr>
+    <tr>
+      <th rowspan="2">Telefonnummern</br>Eltern</th>
+      <td>1234567890</td>
+      <td>1234567890</td>
+    </tr>
+    <tr>
+      <td>0987654321</td>
+      <td>0987654321</td>
+    </tr>
+</table>
 
 - - -
 
