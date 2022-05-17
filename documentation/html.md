@@ -627,7 +627,7 @@ Ein Rowspan ist dazu da, um vertikale Zellen zu verbinden:
       <td>Alex</td>
     </tr>
     <tr>
-      <th rowspan="2">Telefonnummern</br>Eltern</th>
+      <th rowspan="2">Telefonnummern<br>Eltern</th>
       <td>1234567890</td>
       <td>1234567890</td>
     </tr>
