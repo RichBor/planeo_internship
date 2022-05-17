@@ -85,7 +85,7 @@ Es gibt einen **Selector**, eine **Property** und ein **Value** für das **Prope
 - Der **Selector** zeigt auf das HTML-Element, welches angesteuert werden soll.
 - Ein **Property** ist eine Art Attribut und der **Value** beschreibt das Attribut
 
-![css syntax](../imgs/markdown/w3%20css%20syntax%20example.png)\
+![css syntax](../imgs/markdown/w3%20css%20syntax%20example.png)
 
 Nach dem **Selector** werden die **Properties** und **Values** in ```{}``` eingerahmt.\
 **Properties** werden mit **semicolons** getrennt.
