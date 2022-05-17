@@ -48,14 +48,14 @@ die oft von Browsern benutzt werden.
       Autor, Beschreibung, Charset und Viewport
 
 ###### script
-
+```html
 -     <script> 
             function myFunction() {
                      document.getElementById("demo").innerHTML = "Hello JavaScript!";
                      }
       </script>
     - Mit ```<script></script>``` kann man **Skripts** von **Javascript** integrieren
-
+```
 #### Body
 
 ```<body></body>``` ist der Main-Container der Seite und enthält
@@ -112,13 +112,13 @@ und damit auch übersichtlicher zu machen:
 #### Lists
 
 ###### ol
-
+```html
 -     <ol>
         <li> Schritt</li>
         <li> Schritt</li>
         <li> Schritt</li>
       </ol>
-
+```
 So sieht es dann im Browser aus:\
 <ol>
     <li> Schritt</li>
@@ -130,13 +130,13 @@ Der Inhalt der Liste wird nummeriert, also sortiert.\
 Das eignet sich zum Beispiel für Schritte von Rezepte oder Anleitungen.
 
 ###### ul
-
+```html
 -       <ul>
           <li> Aufzählung</li>
           <li> Aufzählung</li>
           <li> Aufzählung</li>
         </ul>
-
+```
 So sieht es dann im Browser aus:<br>
 <ul>
     <li> Aufzählung</li>
@@ -238,12 +238,13 @@ Mit dem [input type](https://www.w3schools.com/html/html_form_input_types.asp)
 kann man dann die Art des Inputs angeben, standardmäßig **text**.
 
 ###### Label
-
+```html
 -      <form>
          <label for="test">Testtext</label><br>
          <input type="text" id="test" name="test">
        </form>
-    - Mit ```<label for="">...</label>``` kann man sozusagen dem **input** eine Überschrift geben und so
+```
+- Mit ```<label for="">...</label>``` kann man sozusagen dem **input** eine Überschrift geben und so
       ihren Nutzen erklären.\
       Dafür muss man beim Label dann die id des inputs angeben.<br><br>
       So sieht das dann im Browser aus:<br><br>
@@ -253,13 +254,14 @@ kann man dann die Art des Inputs angeben, standardmäßig **text**.
       </form>
 
 ###### Submit
-
+```html
 -     <form>
          <label for="test">Testtext</label><br>
          <input type="text" id="test" name="test">
          <input type="submit">
       </form>
-    - Mit ```<input type="submit">``` kann man einen Submit button hinzufügen,
+```
+- Mit ```<input type="submit">``` kann man einen Submit button hinzufügen,
       um das Formular abzuschicken:<br><br>
       So sieht es dann im Browser aus:<br><br>
       <form>
@@ -269,25 +271,26 @@ kann man dann die Art des Inputs angeben, standardmäßig **text**.
       </form>
 
 ###### form action
-
+```html
 -     <form action="test.php">
          <label for="test">Testtext</label><br>
          <input type="text" id="test" name="test">
          <input type="submit">
       </form>
-    - Aber wohin wird das Formular dann geschickt?\
+```
+- Aber wohin wird das Formular dann geschickt?\
       Das spezifiziert man dann mit ```<form action="test.php">```.\
       Man kann das Formular z.B an ein PHP-Dokument schicken,
       um es dort verarbeiten zu lassen.
 
 ###### post & get
-
+```html
 -     <form action="test.php" method="get">
          <label for="test">Testtext</label><br>
          <input type="text" id="test" name="test">
          <input type="submit">
       </form>
-
+```
 Es gibt zwei Methoden, wie das Formular abgeschickt wird.\
 Standardmäßig ist das ```<form action="" method="get">```.\
 Diese Methode ist gut dafür,
@@ -299,13 +302,14 @@ in der URL angezeigt werden, sondern in der HTTP Anfrage selbst.\
 Dazu kommt das 3000 character limit bei **get**, welches es bei **post** nicht gibt.
 
 ###### textarea
-
+```html
 -     <form>
         <label for="test">Testtext</label><br>
         <textarea id="test" rows="4" cols="30">Das ist ein 4 Reihen Textfeld</textarea><br>
         <input type="submit">
       </form>
-    - Mit dem Element ```<textarea></textarea>``` kann man ein Textfeld mit vorgegebener
+```
+- Mit dem Element ```<textarea></textarea>``` kann man ein Textfeld mit vorgegebener
       Basis-größe erschaffen.<br><br>
       So sieht es dann im Browser aus:<br><br>
       <form>
@@ -315,7 +319,7 @@ Dazu kommt das 3000 character limit bei **get**, welches es bei **post** nicht g
       </form>
 
 ###### select
-
+```html
 -     <form>
          <label for="test">Lieblingsobst</label><br>
          <select id="test">
@@ -325,7 +329,8 @@ Dazu kommt das 3000 character limit bei **get**, welches es bei **post** nicht g
          </select>
          <input type="submit">
       </form>
-    - Mit dem ```<select></select>``` Element kann man statisches dropdown-menü erstellen,
+```
+- Mit dem ```<select></select>``` Element kann man statisches dropdown-menü erstellen,
       bei dem nur die vorgegebenen optionen verfügbar sind:<br>
       -So sieht es dann im Browser aus:<br><br>
       <form>
@@ -346,7 +351,7 @@ Dazu kommt das 3000 character limit bei **get**, welches es bei **post** nicht g
     - <button>dieser button macht nix</button>
 
 ###### fieldset & legend
-
+```html
 -     <form>
         <fieldset>
         <legend>Fragen</legend>
@@ -359,7 +364,7 @@ Dazu kommt das 3000 character limit bei **get**, welches es bei **post** nicht g
         <input type="submit">
         </fieldset>
       </form>
-
+```
 Mit dem Element ```<fieldset></fieldset>``` kann man ein Ramen um Teile des Formulars machen,
 um sie besser zu strukturieren.\
 Mit ```<legend></legend>``` gibt man diesen Feldern dann eine "Überschrift":
@@ -378,7 +383,7 @@ Mit ```<legend></legend>``` gibt man diesen Feldern dann eine "Überschrift":
 </form>
 
 ###### radio
-
+```html
 -     <form action="test.php">
         <fieldset>
             <legend>Lieblingsauto?</legend>
@@ -392,7 +397,7 @@ Mit ```<legend></legend>``` gibt man diesen Feldern dann eine "Überschrift":
         </fieldset>
 
       </form>
-
+```
 Mit dem **input-type** ```<input type="radio">``` kann man Gruppen von
 Auswahl bilden, von der man aber immer nur eine Option auswählen kann.
 
@@ -410,7 +415,7 @@ Auswahl bilden, von der man aber immer nur eine Option auswählen kann.
 </form>
 
 ###### file
-
+```html
 -     <form action="test.php" method="post">
         <fieldset>
          <legend>Anhang</legend>
@@ -419,7 +424,7 @@ Auswahl bilden, von der man aber immer nur eine Option auswählen kann.
          <input type="submit">
         </fieldset>
       </form>
-
+```
 Mit dem **input-type** ```<input type="file">``` kann man die möglichkeit geben,
 eine Datei hochzuladen. Um zu erlauben, dass mehrere Dateien hochgeladen werden,
 kann man dem Element ```<input>``` das Attribut ```multiple``` geben.\
@@ -435,7 +440,7 @@ Bei Datei-Uploads muss die **form-method** ```<form method="post">``` sein!
 </form>
 
 ###### hidden
-
+```html
 -     <form>
         <fieldset>
          <legend>Hidden Input!</legend>
@@ -445,14 +450,14 @@ Bei Datei-Uploads muss die **form-method** ```<form method="post">``` sein!
          <input type="submit">
         </fieldset>
       </form>
-
+```
 Mit einem **hidden-input** kann man ein **value** zu einem Formular hinzufügen,
 dass der Nutzer nicht einfach sehen und bearbeiten kann.\
 Mit developer tools und inspect element kann man diesen input trotzdem bearbeiten.\
 Es ist also nicht sicher!
 
 ###### checkbox
-
+```html
 -     <form>
         <fieldset>
          <legend>Zutaten Pizza</legend>
@@ -467,7 +472,7 @@ Es ist also nicht sicher!
          <input type="submit">
         </fieldset>
       </form>
-
+```
 Mit dem **checkbox-input** kann man eine Gruppe von Optionen erstellen,
 von der man so viele wie man will, oder auch garkeine Option auswählen kann.
 
@@ -489,7 +494,7 @@ von der man so viele wie man will, oder auch garkeine Option auswählen kann.
 - - -
 
 ## HTML Tables
-
+```html
     <table>
        <caption>Überstunden</caption>
        <tr>
@@ -511,7 +516,7 @@ von der man so viele wie man will, oder auch garkeine Option auswählen kann.
          <td>0</td>
        </tr>
       </table>
-
+```
 - Den Container öffnet man mit ```<table></table>```
 - Eine neue table-row öffnet man mit ```<tr></tr>```
 - Für Überschriften benutzt man table-heading ```<th></th>``` für Zellen
@@ -544,7 +549,7 @@ So sieht das dann im Browser aus:
 ### Colspan
 
 Ein Colspan wird benutzt, um horizontale Zellen zu verbinden:
-
+```html
     <table>
         <caption>Schüler Grundschule</caption>
         <tr>
@@ -565,7 +570,7 @@ Ein Colspan wird benutzt, um horizontale Zellen zu verbinden:
           <td>0987654321</td>
         </tr>
     </table>
-
+```
 <table>
     <caption>Schüler Grundschule</caption>
     <tr>
@@ -590,7 +595,7 @@ Ein Colspan wird benutzt, um horizontale Zellen zu verbinden:
 ### Rowspan
 
 Ein Rowspan ist dazu da, um vertikale Zellen zu verbinden:
-
+```html
     <table>
         <caption>Schüler Grundschule</caption>
         <tr>
@@ -613,7 +618,7 @@ Ein Rowspan ist dazu da, um vertikale Zellen zu verbinden:
           <td>0987654321</td>
         </tr>
     </table>
-
+```
 <table>
     <caption>Schüler Grundschule</caption>
     <tr>
