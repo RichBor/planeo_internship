@@ -193,7 +193,7 @@ details {
     text-align: left;
 }
 
-#divexample{
+#divexample {
     position: center;
     text-align: center;
     background-color: black;
@@ -216,8 +216,35 @@ audio {
     border-radius: 30px;
 }
 
+form {
+    text-align: left;
+    font-size: 70%;
+    margin-left: 50px;
+    margin-right: 100px;
+    margin-bottom: 30px;
+    line-height: 150%;
+}
 
+#normalt {
+    border-collapse: collapse;
+    width: 50%;
+    margin: 50px;
+}
 
+#normalt th, #normalt td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #DDD;
+    text-align: center;
+}
+
+#normalt th:hover, #normalt td:hover {
+    background-color: darkslategray;
+}
+
+#normalt tr:hover {
+    background-color: darkgray;
+}
 
 
 
