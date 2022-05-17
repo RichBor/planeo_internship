@@ -34,25 +34,130 @@
             <details>
                 <summary>Bilder</summary>
                 <p class="text"><br><br>Hier ist ein Bild:</p>
-                <div id="planeopic"><p class="i">----------------------</p> </div>
+                <div id="planeopic"><p class="i">----------------------</p></div>
             </details>
 
             <details>
                 <summary>Video</summary>
                 <p class="text"><br><br>Hier ist ein Video:</p>
-                <video controls><source src="../imgs/other/video.mp4" type="video/mp4"></video>
+                <video controls>
+                    <source src="../imgs/other/video.mp4" type="video/mp4">
+                </video>
             </details>
 
             <details>
                 <summary>Audio</summary>
                 <p class="text"><br><br>Hier ist eine Audio:</p>
-                <audio controls><source src="../imgs/other/audio.mp3" type="audio/mpeg"></audio>
+                <audio controls>
+                    <source src="../imgs/other/audio.mp3" type="audio/mpeg">
+                </audio>
             </details>
 
-            <h3>Formulare</h3>
-            <p class="text">TESTTESTTEST</p>
-          
-       </article>
+            <h3>Formular</h3>
+
+            <details>
+                <summary>Registrierungsformular</summary><br><br><br>
+
+                <form method="post" action="">
+                    <fieldset>
+                        <legend>Registrierung</legend>
+                        <label for="name"> Name: </label>
+                        <input type="text" id="name" value="Name"><br>
+                        <label for="vorname">  Vorname: </label>
+                        <input type="text" id="vorname" value="Vorname"><br>
+                        <label for="gebdatum">Geburtstagsdatum: </label>
+                        <input type="date" id="gebdatum" value="Geburtstagsdatum"><br>
+                        <label for="geschlecht">Geschlecht: </label>
+                        <select id="geschlecht">
+                            <option selected disabled>Bitte wählen</option>
+                            <option>Weiblich</option>
+                            <option>Männlich</option>
+                            <option>Other</option>
+                        </select> <br><br>
+                        <label for="country">Land: </label>
+                        <select id="country">
+                            <option selected disabled></option>
+                            <option value="BE">Belgien</option>
+                            <option value="BG">Bulgarien</option>
+                            <option value="DK">Dänemark</option>
+                            <option value="DE">Deutschland</option>
+                            <option value="EE">Estland</option>
+                            <option value="FI">Finnland</option>
+                            <option value="FR">Frankreich</option>
+                            <option value="GR">Griechenland</option>
+                            <option value="IE">Irland</option>
+                            <option value="IS">Island</option>
+                            <option value="IT">Italien</option>
+                            <option value="HR">Kroatien</option>
+                            <option value="LV">Lettland</option>
+                            <option value="LI">Liechtenstein</option>
+                            <option value="LT">Litauen</option>
+                            <option value="LU">Luxemburg</option>
+                            <option value="MT">Malta</option>
+                            <option value="NL">Niederlande</option>
+                            <option value="AT">Österreich</option>
+                            <option value="PL">Polen</option>
+                            <option value="PT">Portugal</option>
+                            <option value="RO">Rumänien</option>
+                            <option value="SE">Schweden</option>
+                            <option value="CH">Schweiz</option>
+                            <option value="SK">Slowakei</option>
+                            <option value="SI">Slowenien</option>
+                            <option value="ES">Spanien</option>
+                            <option value="CZ">Tschechische Republik</option>
+                            <option value="HU">Ungarn</option>
+                            <option value="GB">Vereinigtes Königreich</option>
+                            <option value="CY">Zypern</option>
+                        </select> <br>
+                        <label for="phone">Telefon: </label>
+                        <input type="tel" id="phone" name="Telephone"><br>
+                        <label for="mail">Email: </label>
+                        <input type="email" id="mail" name="Email">
+                        <br><br>
+                        <label for="password">Passwort: </label>
+                        <input type="password" id="password" name="Passwort"><br>
+                        <label for="passwordcheck">Passwort bestätigen: </label>
+                        <input type="password" id="passwordcheck" name="Passwort bestätigen"><br><br>
+                        <label for="file">Datei hochladen: </label>
+                        <input type="file" id="file"><br><br>
+
+                        <input type="submit">
+
+                    </fieldset>
+                </form>
+
+            </details>
+
+            <h3>Tabellen</h3>
+
+            <details>
+                <summary>Tabelle</summary><br><br>
+
+                <table id="normalt">
+                    <caption>Überstunden</caption>
+                    <tr>
+                        <th>Montag</th>
+                        <th>Dienstag</th>
+                        <th>Mittwoch</th>
+                        <th>Donnerstag</th>
+                        <th>Freitag</th>
+                        <th>Samstag</th>
+                        <th>Sonntag</th>
+                    </tr>
+                    <tr style="text-align: center">
+                        <td>1</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>0</td>
+                    </tr>
+                </table>
+
+            </details>
+
+        </article>
     </section>
 
 </div>
