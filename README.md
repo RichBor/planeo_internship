@@ -4,8 +4,6 @@
 
 HTML/CSS Projekt mit praktischer Übung von wichtigen Basics in HTML & CSS.
 
-[Link](index.html)
-
 #### **Dokumentation mit Markdown in Bereichen:**
 
 - [CSS](documentation/css.md)
