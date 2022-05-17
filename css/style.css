@@ -62,10 +62,10 @@ footer {
     margin-left: 20px;
     margin-right: 18px;
     padding: 5px;
-    text-align: center;
     font-size: 120%;
     color: white;
     border: 3px solid black;
+    text-align: center;
 }
 
 @media screen and (max-width: 1000px) {
@@ -245,6 +245,8 @@ form {
 #normalt tr:hover {
     background-color: darkgray;
 }
+
+
 
 
 

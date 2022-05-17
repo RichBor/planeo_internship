@@ -35,8 +35,17 @@
 </div>
 
 <footer>
-    von Richard Borgardt || richard.borgardt@web.de
+    <p><span id="author"> von Richard Borgardt || richard.borgardt@web.de </span></p>
+
+    <p>Datum/Zeit: <span id="datetime"></span></p>
+
+
 </footer>
 
 </body>
 </html>
+
+<script>
+    var dt = new Date();
+    document.getElementById("datetime").innerHTML=dt.toLocaleString();
+</script>
