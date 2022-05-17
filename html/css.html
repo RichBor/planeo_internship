@@ -33,8 +33,17 @@
 </div>
 
 <footer>
-    von Richard Borgardt || richard.borgardt@web.de
+    <p><span id="author"> von <b>Richard Borgardt || richard.borgardt@web.de</b> </span></p>
+
+    <p><b>Datum:</b> <span id="date"></span> <b>|| Zeit:</b> <span id="time"></span> Uhr </p>
 </footer>
 
 </body>
 </html>
+
+<script>
+    var dt = new Date();
+    const options = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
+    document.getElementById("date").innerHTML = dt.toLocaleDateString("de-DE", options);
+    document.getElementById("time").innerHTML = dt.toLocaleTimeString("de-DE");
+</script>
