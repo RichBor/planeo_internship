@@ -13,65 +13,68 @@ mit HTML und JavaScript eine Art Kernsprache des Internets.
 
 CSS ist ja eine schöne Sprache, aber ohne ein Gerüst von HTML ist es wertlos.\
 Einbinden kann man eine externe ```.css``` Datei im Head.
-
-    <head>
-        <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-
+```css
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+```
 - - -
 
 ## HTML Elemente ansteuern
 
 Ansteuern kann man HTML Elemente, oder Tags, indem man z.B. ihren Namen selber
 aufruft:
+```css
+body {
+    background-color: lightgray
+}
 
-    body {
-        background-color: lightgray
-    }
-
-    footer {
-        text-align: right
-    }
-
+footer {
+    text-align: right
+}
+```
 Man kann Elemente aber auch individuell, und nicht so allgemein, ansteuern,
 indem man z.B. einem div-Element eine ID gibt:
 
-    <div id="hub">  </div>
+```css
+<div id="hub">  </div>
 
-    <p id="small">   </p>
-
+<p id="small">   </p>
+```
 ->
 
-    #hub {
+```css
+#hub {
     background-color: aquatic
-    }
+}
 
-    #small {
-        font-size: 50%;
-        color: white;
-    }
+#small {
+    font-size: 50%;
+    color: white;
+}
+```
 
 IDs werden also mit einem ```#``` angesteuert, sie müssen aber einzigartig sein.\
 \
 Wenn man aber bestimmte Elemente gruppieren möchte, um sie zusammen anzusteuern,
 dann benutzt man Klassen:
+```css
+<span class="maintext">   </span>
 
-    <span class="maintext">   </span>
-
-    <p class="city">   </p>
-
+<p class="city">   </p>
+```
 ->
+```css
+.maintext {
+    font-size:90%;
+    color: white;
+}
 
-    .maintext {
-        font-size:90%;
-        color: white;
-    }
-    
-    .city {
-        color: aquatic;
-        font-weight: bold;
-    }
-
+.city {
+    color: aquatic;
+    font-weight: bold;
+}
+```
 Klassen werden also mit einem ```.``` angesteuert.\
 Diese können hingegen so oft benutzt werden wie man will.
 
