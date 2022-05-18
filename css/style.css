@@ -265,8 +265,7 @@ iframe {
 
 #normalt {
     border-collapse: collapse;
-    width: 50%;
-    margin: 50px;
+    margin: 25px;
 }
 
 #normalt th, #normalt td {
