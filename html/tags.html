@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Tags</title>
     <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
 </head>
 <body>
 
@@ -49,6 +50,12 @@
                 <audio controls>
                     <source src="../imgs/other/audio.mp3" type="audio/mpeg">
                 </audio>
+            </details>
+
+            <details>
+                <summary>IFrame</summary>
+                <p class="text"><br><br>Hier ist ein IFrame von YouTube:</p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/4ji4fiOEUhw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </details>
 
             <h3>Formular</h3>
@@ -119,7 +126,11 @@
                         <input type="password" id="passwordcheck" name="Passwort bestätigen"><br><br>
                         <label for="file">Datei hochladen: </label>
                         <input type="file" id="file"><br><br>
-
+                        Akzeptierst du die Nutzungsbedingungen?<br>
+                        <label for="yes">Ja</label>
+                        <input type="radio" id="yes" name="tos" value="yes">
+                        <label for="no">Nein</label>
+                        <input type="radio" id="no" name="tos" value="no"><br><br>
                         <input type="submit">
 
                     </fieldset>

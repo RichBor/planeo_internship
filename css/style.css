@@ -259,6 +259,10 @@ form {
     line-height: 150%;
 }
 
+iframe {
+    padding-bottom: 20px;
+}
+
 #normalt {
     border-collapse: collapse;
     width: 50%;
