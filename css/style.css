@@ -1,14 +1,16 @@
 html {
     background-color: white;
     height: 100vh;
+    overflow-x: hidden;
 }
 
 body {
     background-color: white;
-    margin: 0px;
+    margin: 0;
     height: 100vh;
     display: flex;
     flex-direction: column;
+    font-family: "Arial Black", Gadget, sans-serif;
 }
 
 #wrapper {
@@ -21,13 +23,13 @@ body {
     background-color: white;
     text-align: center;
     font-size: 180%;
-    position: sticky;
+
 }
 
 nav {
     color: #592908;
     text-align: center;
-    width: 35%;
+    min-width: 15%;
     margin-top: 50px;
     margin-left: 10px;
     margin-bottom: 50px;
@@ -47,10 +49,9 @@ section {
 }
 
 article {
-
     padding: 40px;
-    max-width: 80%;
-    height: min-content;
+    min-width: 81%;
+    height: auto;
     background-color: #ebebeb;
     display: inline;
     float: right;
@@ -70,8 +71,10 @@ footer {
 }
 
 @media screen and (max-width: 1000px) {
-    .header, nav, article {
-        width: auto;
+
+    body, html {
+        max-width: 100%;
+        display: block;
     }
 
     li {
@@ -79,30 +82,37 @@ footer {
     }
 
     nav {
-        height: 15%;
+        margin: 0;
+        height: 15vh;
+        min-width: 100%;
         text-align: center;
-        display: block;
+        position: center;
+        top: 0;
+        z-index: 1;
     }
 
-    .navp{
+    .navp {
         display: inline;
     }
 
     article {
         display: block;
-        position: relative;
-        margin-right: 10px;
         padding: 5px;
         max-width: 100%;
-
-    }
-
-    footer {
-        display: grid;
+        min-height: 100vh;
+        z-index: 2;
     }
 
     #planeopic {
         display: none;
+    }
+
+    section {
+        display: inline-block;
+    }
+
+    summary, details {
+        max-width: 90%;
     }
 
 }
@@ -123,10 +133,7 @@ a:hover, a:active {
 
 .text {
     text-align: center;
-    padding-left: 50px;
-    padding-top: 20px;
-    padding-bottom: 10px;
-    padding-right: 50px;
+    padding: 20px 50px 10px;
     line-height: 125%;
     color: #592908;
 }
@@ -147,7 +154,7 @@ details {
     display: inline-block;
     margin-top: 25px;
     margin-bottom: 25px;
-    width: 100%;
+    width: 90%;
 }
 
 .i {
