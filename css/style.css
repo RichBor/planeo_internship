@@ -23,7 +23,6 @@ body {
     background-color: white;
     text-align: center;
     font-size: 180%;
-
 }
 
 nav {
@@ -68,6 +67,7 @@ footer {
     color: #592908;
     text-align: center;
     position: relative;
+
 }
 
 @media screen and (max-width: 1000px) {
@@ -89,6 +89,7 @@ footer {
         position: center;
         top: 0;
         z-index: 1;
+        box-shadow: 0px 7px 5px 1px rgba(255,255,255,1);
     }
 
     .navp {
