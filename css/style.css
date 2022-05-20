@@ -67,7 +67,7 @@ footer {
     color: #592908;
     text-align: center;
     position: relative;
-
+    line-height: 200%;
 }
 
 @media screen and (max-width: 1000px) {
@@ -114,6 +114,10 @@ footer {
 
     summary, details {
         max-width: 90%;
+    }
+
+    #contact{
+        min-width: 10%;
     }
 
 }
@@ -281,3 +285,48 @@ iframe {
 #normalt tr:hover {
     background-color: lightgray;
 }
+
+input[type=text], #nachricht {
+    font-size: 120%;
+    width: 40%;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin: 8px 0 8px 20%;
+}
+
+.contactlabel {
+    margin-left: 20%;
+    font-size: 110%;
+    font-weight: bold;
+}
+
+input[type=submit] {
+    font-size: 125%;
+    margin-left: 25%;
+    width: 30%;
+    background-color: #abc43f;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#contact {
+    margin-left: 5%;
+    margin-top: 1%;
+    width: 5%;
+    background-color: #abc43f;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+}
+
+
+
