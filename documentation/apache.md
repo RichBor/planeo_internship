@@ -39,6 +39,20 @@ in /etc/hosts:
 
 - - -
 
+## Terminal Befehle:
+
+- ```systemctl reload apache2```
+  - Reloaded Config
+
+- ```systemctl restart apache2```
+  - Startet den Server neu
+
+- ```a2ensite (config)```
+  - Akiviert virtual host config
+
+- ```a2dissite (config)```
+  - Deaktiviert virtual host config
+
 
 
 
