@@ -330,7 +330,8 @@ input[type=submit] {
 
 .error {
     color: red;
-    margin-left: 10%;
+    float: left;
+    margin-left: 20%;
     font-weight: bold;
 }
 

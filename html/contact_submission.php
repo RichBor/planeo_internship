@@ -33,8 +33,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["vorname"] = test_input($_POST["vorname"]);
     }
 
-    if(empty($_POST["email"])) {
-        $_SESSION["emailErr"] = "Email fehlt!";
+    if(empty($_POST["email"]) || !filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+        $_SESSION["emailErr"] = "Email fehlt oder ungültige Email!";
         $break = true;
     } else {
         $_SESSION["email"] = test_input($_POST["email"]);
