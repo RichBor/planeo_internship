@@ -1,123 +1,74 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML & CSS</title>
-    <link rel="stylesheet" href="../css/style.css" type="text/css">
-    <link rel="icon" type="image/x-icon" href="../favicon.ico" sizes="32x32">
-</head>
-<body>
+<h2> HTML & CSS Grundstrukturen </h2>
+<p class="text">Eine standart HTML-Struktur besteht aus einem Head, einem Body und einem Style, der entweder
+    im Head zu finden oder in einer seperaten Datei verlinkt ist.</p>
 
-<div id="wrapper">
 
-    <div class="header">
-        <h1>Planeo Internship</h1>
-        <a href="../index.html"><img src="../imgs/planeo-logo.svg" id="planeopic"></a>
+<details>
+    <summary>Der Head</summary>
+    <p class="text"><br><br>Der Head enthaelt Metadaten wie Keywords, Autor, verlinkte Stylesheets oder
+        Seitentitel.<br>Diese Daten werden z.B von Browsern und Suchmaschinen benutzt.</p>
+
+    <div id="w3">Head von W3Schools.com</div>
+</details>
+
+
+<details>
+    <summary>Der Body</summary>
+    <p class="text"><br><br>Der Body enthält das ganze Grundgerüst. Hier steht der ganze Content.</p>
+</details>
+
+
+<details>
+    <summary>Der Style</summary>
+    <p class="text"><br><br>Der Style enthält idealerweise das ganze Design.<br>Es ist entweder im Head
+        direkt, oder verlinkt zu sehen.<br>Das Ziel, den Style von HTML direkt zu trennen ist, es
+        übersichtlicher zu halten.</p>
+    <p class="text">Auf dieser Seite ist der Style in einer seperaten Datei angelegt. Diese Datei kann man
+        im Head verlinken und so in das HTML einbinden<br><br></p>
+</details>
+
+
+<h2>HTML Text Structure</h2>
+
+<details>
+    <summary>Paragraphen</summary>
+    <p class="text"><br><br>Ein Paragraph ist ein block-Element um Text zu beschreiben.</p>
+</details>
+
+<details>
+    <summary> ungeordnete Listen</summary>
+    <p class="text"><br><br>Eine ungeordnete Liste ist einfach eine Liste mit Stichpunkten, also keiner
+        direkten Reihenfolge:</p>
+
+    <ul class="listexample">
+        <li>Mercedes</li>
+        <li>Audi</li>
+        <li>VW</li>
+        <li>Skoda</li>
+    </ul>
+</details>
+
+<details>
+    <summary> geordnete Listen</summary>
+    <p class="text"><br><br>Eine geordnete Liste ist eine Liste, die durchnummeriert ist.<br>Das ist
+        praktisch für z.B. Schritt für Schritt Anleitungen.</p>
+
+    <ol class="listexample">
+        <li>Eier einschlagen</li>
+        <li>Mehl und Butter hinzufügen</li>
+        <li>Umrühren</li>
+        <li>verteilen</li>
+    </ol>
+</details>
+
+<details>
+    <summary>div's</summary>
+    <p class="text"><br><br>Ein div ist ein block-Element, mit dem man einen Container erschaffen kann (wie
+        eine box).
+        <br>Das macht man um bestimmte Sektionen in Websiten einzuteilen und sie dann individuell ansprechen
+        zu können.</p>
+    <div id="divexample">
+        <p>Dies ist ein div-Element</p>
     </div>
 
-    <section>
-        <nav>
-            <p class="navp"><a href="../index.html">| Start |</a></p>
-            <p class="navp" id="currentsite">| HTML & CSS |</p>
-            <p class="navp"><a href="tags.html">| HTML Tags |</a></p>
-        </nav>
-
-
-        <article>
-            <h2> HTML & CSS Grundstrukturen </h2>
-            <p class="text">Eine standart HTML-Struktur besteht aus einem Head, einem Body und einem Style, der entweder
-                im Head zu finden oder in einer seperaten Datei verlinkt ist.</p>
-
-
-            <details>
-                <summary>Der Head</summary>
-                <p class="text"><br><br>Der Head enthaelt Metadaten wie Keywords, Autor, verlinkte Stylesheets oder
-                    Seitentitel.<br>Diese Daten werden z.B von Browsern und Suchmaschinen benutzt.</p>
-
-                <div id="w3">Head von W3Schools.com</div>
-            </details>
-
-
-            <details>
-                <summary>Der Body</summary>
-                <p class="text"><br><br>Der Body enthält das ganze Grundgerüst. Hier steht der ganze Content.</p>
-            </details>
-
-
-            <details>
-                <summary>Der Style</summary>
-                <p class="text"><br><br>Der Style enthält idealerweise das ganze Design.<br>Es ist entweder im Head
-                    direkt, oder verlinkt zu sehen.<br>Das Ziel, den Style von HTML direkt zu trennen ist, es
-                    übersichtlicher zu halten.</p>
-                <p class="text">Auf dieser Seite ist der Style in einer seperaten Datei angelegt. Diese Datei kann man
-                    im Head verlinken und so in das HTML einbinden<br><br></p>
-            </details>
-
-
-            <h2>HTML Text Structure</h2>
-
-            <details>
-                <summary>Paragraphen</summary>
-                <p class="text"><br><br>Ein Paragraph ist ein block-Element um Text zu beschreiben.</p>
-            </details>
-
-            <details>
-                <summary> ungeordnete Listen</summary>
-                <p class="text"><br><br>Eine ungeordnete Liste ist einfach eine Liste mit Stichpunkten, also keiner
-                    direkten Reihenfolge:</p>
-
-                <ul class="listexample">
-                    <li>Mercedes</li>
-                    <li>Audi</li>
-                    <li>VW</li>
-                    <li>Skoda</li>
-                </ul>
-            </details>
-
-            <details>
-                <summary> geordnete Listen</summary>
-                <p class="text"><br><br>Eine geordnete Liste ist eine Liste, die durchnummeriert ist.<br>Das ist
-                    praktisch für z.B. Schritt für Schritt Anleitungen.</p>
-
-                <ol class="listexample">
-                    <li>Eier einschlagen</li>
-                    <li>Mehl und Butter hinzufügen</li>
-                    <li>Umrühren</li>
-                    <li>verteilen</li>
-                </ol>
-            </details>
-
-            <details>
-                <summary>div's</summary>
-                <p class="text"><br><br>Ein div ist ein block-Element, mit dem man einen Container erschaffen kann (wie
-                    eine box).
-                    <br>Das macht man um bestimmte Sektionen in Websiten einzuteilen und sie dann individuell ansprechen
-                    zu können.</p>
-                <div id="divexample">
-                    <p>Dies ist ein div-Element</p>
-                </div>
-
-            </details>
-
-        </article>
-    </section>
-
-</div>
-
-<footer>
-    <button id="contact" onclick="window.location.href = 'contact.php'">Contact</button>
-    <span> von <b>Richard Borgardt || richard.borgardt@web.de</b> </span><br>
-    <b>Datum:</b> <span id="date"></span> <b>|| Zeit:</b> <span id="time"></span> Uhr
-</footer>
-
-</body>
-</html>
-
-<!-- Skript für Datum- und Zeitstempel im Footer -->
-<script>
-    var dt = new Date();
-    const options = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
-    document.getElementById("date").innerHTML = dt.toLocaleDateString("de-DE", options);
-    document.getElementById("time").innerHTML = dt.toLocaleTimeString("de-DE");
-</script>
+</details>
