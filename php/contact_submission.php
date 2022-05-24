@@ -72,4 +72,4 @@ if(!$break) {
     }
 }
 
-header("Location: contact.php");
+header("Location: ../index.php?s=contact");

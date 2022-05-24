@@ -1,191 +1,142 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Tags</title>
-    <link rel="stylesheet" href="../css/style.css" type="text/css">
-    <link rel="icon" type="image/x-icon" href="../favicon.ico">
-</head>
-<body>
+<h2>Wichtige HTML Tags</h2>
+<p class="text">In HTML5 gibt es 110 Tags, mit denen man seine Website füllen kann.<br>
+    Aber eigentlich braucht man immer nur ein paar von diesen 110.</p>
 
-<div id="wrapper">
-    <div class="header">
-        <h1>Planeo Internship</h1>
-        <a href="../index.html"><img src="../imgs/planeo-logo.svg" id="planeopic"></a>
-    </div>
+<h3>Multimedia</h3>
 
-    <section>
-        <nav>
-            <p class="navp"><a href="../index.html">| Start |</a></p>
-            <p class="navp"><a href="htmlandcss.html">| HTML & CSS |</a></p>
-            <p class="navp" id="currentsite">| HTML Tags |</p>
-        </nav>
+<details>
+    <summary>Bilder</summary>
+    <p class="text"><br><br>Hier ist ein Bild:</p>
+    <img src="../imgs/planeo-logo.svg" style="padding: 100px">
+</details>
 
-        <article>
+<details>
+    <summary>Video</summary>
+    <p class="text"><br><br>Hier ist ein Video:</p>
+    <video controls>
+        <source src="../imgs/other/video.mp4" type="video/mp4">
+    </video>
+</details>
 
-            <h2>Wichtige HTML Tags</h2>
-            <p class="text">In HTML5 gibt es 110 Tags, mit denen man seine Website füllen kann.<br>
-                Aber eigentlich braucht man immer nur ein paar von diesen 110.</p>
+<details>
+    <summary>Audio</summary>
+    <p class="text"><br><br>Hier ist eine Audio:</p>
+    <audio controls>
+        <source src="../imgs/other/audio.mp3" type="audio/mpeg">
+    </audio>
+</details>
 
-            <h3>Multimedia</h3>
+<details>
+    <summary>IFrame</summary>
+    <p class="text"><br><br>Hier ist ein IFrame von Planeo:</p>
+    <iframe src="https://www.planeo.de" width="50%" height="500px" title="iframe"></iframe>
+</details>
 
-            <details>
-                <summary>Bilder</summary>
-                <p class="text"><br><br>Hier ist ein Bild:</p>
-                <img src="../imgs/planeo-logo.svg" style="padding: 100px">
-            </details>
+<h3>Formular</h3>
 
-            <details>
-                <summary>Video</summary>
-                <p class="text"><br><br>Hier ist ein Video:</p>
-                <video controls>
-                    <source src="../imgs/other/video.mp4" type="video/mp4">
-                </video>
-            </details>
+<details>
+    <summary>Registrierungsformular</summary>
+    <br><br><br>
 
-            <details>
-                <summary>Audio</summary>
-                <p class="text"><br><br>Hier ist eine Audio:</p>
-                <audio controls>
-                    <source src="../imgs/other/audio.mp3" type="audio/mpeg">
-                </audio>
-            </details>
+    <form method="post" action="">
+        <fieldset>
+            <legend>Registrierung</legend>
+            <label for="name"> Name: </label>
+            <input type="text" id="name" value="Name"><br>
+            <label for="vorname"> Vorname: </label>
+            <input type="text" id="vorname" value="Vorname"><br>
+            <label for="gebdatum">Geburtstagsdatum: </label>
+            <input type="date" id="gebdatum" value="Geburtstagsdatum"><br>
+            <label for="geschlecht">Geschlecht: </label>
+            <select id="geschlecht">
+                <option selected disabled>Bitte wählen</option>
+                <option>Weiblich</option>
+                <option>Männlich</option>
+                <option>Other</option>
+            </select> <br><br>
+            <label for="country">Land: </label>
+            <select id="country">
+                <option selected disabled></option>
+                <option value="BE">Belgien</option>
+                <option value="BG">Bulgarien</option>
+                <option value="DK">Dänemark</option>
+                <option value="DE">Deutschland</option>
+                <option value="EE">Estland</option>
+                <option value="FI">Finnland</option>
+                <option value="FR">Frankreich</option>
+                <option value="GR">Griechenland</option>
+                <option value="IE">Irland</option>
+                <option value="IS">Island</option>
+                <option value="IT">Italien</option>
+                <option value="HR">Kroatien</option>
+                <option value="LV">Lettland</option>
+                <option value="LI">Liechtenstein</option>
+                <option value="LT">Litauen</option>
+                <option value="LU">Luxemburg</option>
+                <option value="MT">Malta</option>
+                <option value="NL">Niederlande</option>
+                <option value="AT">Österreich</option>
+                <option value="PL">Polen</option>
+                <option value="PT">Portugal</option>
+                <option value="RO">Rumänien</option>
+                <option value="SE">Schweden</option>
+                <option value="CH">Schweiz</option>
+                <option value="SK">Slowakei</option>
+                <option value="SI">Slowenien</option>
+                <option value="ES">Spanien</option>
+                <option value="CZ">Tschechische Republik</option>
+                <option value="HU">Ungarn</option>
+                <option value="GB">Vereinigtes Königreich</option>
+                <option value="CY">Zypern</option>
+            </select> <br>
+            <label for="phone">Telefon: </label>
+            <input type="tel" id="phone" name="Telephone"><br>
+            <label for="mail">Email: </label>
+            <input type="email" id="mail" name="Email">
+            <br><br>
+            <label for="password">Passwort: </label>
+            <input type="password" id="password" name="Passwort"><br>
+            <label for="passwordcheck">Passwort bestätigen: </label>
+            <input type="password" id="passwordcheck" name="Passwort bestätigen"><br><br>
+            <label for="file">Datei hochladen: </label>
+            <input type="file" id="file"><br><br>
+            Akzeptierst du die Nutzungsbedingungen?<br>
+            <label for="yes">Ja</label>
+            <input type="radio" id="yes" name="tos" value="yes">
+            <label for="no">Nein</label>
+            <input type="radio" id="no" name="tos" value="no"><br><br>
+            <input type="submit">
 
-            <details>
-                <summary>IFrame</summary>
-                <p class="text"><br><br>Hier ist ein IFrame von Planeo:</p>
-                <iframe src="https://www.planeo.de" width="50%" height="500px" title="iframe"></iframe>
-            </details>
+        </fieldset>
+    </form>
 
-            <h3>Formular</h3>
+</details>
 
-            <details>
-                <summary>Registrierungsformular</summary>
-                <br><br><br>
+<h3>Tabellen</h3>
 
-                <form method="post" action="">
-                    <fieldset>
-                        <legend>Registrierung</legend>
-                        <label for="name"> Name: </label>
-                        <input type="text" id="name" value="Name"><br>
-                        <label for="vorname"> Vorname: </label>
-                        <input type="text" id="vorname" value="Vorname"><br>
-                        <label for="gebdatum">Geburtstagsdatum: </label>
-                        <input type="date" id="gebdatum" value="Geburtstagsdatum"><br>
-                        <label for="geschlecht">Geschlecht: </label>
-                        <select id="geschlecht">
-                            <option selected disabled>Bitte wählen</option>
-                            <option>Weiblich</option>
-                            <option>Männlich</option>
-                            <option>Other</option>
-                        </select> <br><br>
-                        <label for="country">Land: </label>
-                        <select id="country">
-                            <option selected disabled></option>
-                            <option value="BE">Belgien</option>
-                            <option value="BG">Bulgarien</option>
-                            <option value="DK">Dänemark</option>
-                            <option value="DE">Deutschland</option>
-                            <option value="EE">Estland</option>
-                            <option value="FI">Finnland</option>
-                            <option value="FR">Frankreich</option>
-                            <option value="GR">Griechenland</option>
-                            <option value="IE">Irland</option>
-                            <option value="IS">Island</option>
-                            <option value="IT">Italien</option>
-                            <option value="HR">Kroatien</option>
-                            <option value="LV">Lettland</option>
-                            <option value="LI">Liechtenstein</option>
-                            <option value="LT">Litauen</option>
-                            <option value="LU">Luxemburg</option>
-                            <option value="MT">Malta</option>
-                            <option value="NL">Niederlande</option>
-                            <option value="AT">Österreich</option>
-                            <option value="PL">Polen</option>
-                            <option value="PT">Portugal</option>
-                            <option value="RO">Rumänien</option>
-                            <option value="SE">Schweden</option>
-                            <option value="CH">Schweiz</option>
-                            <option value="SK">Slowakei</option>
-                            <option value="SI">Slowenien</option>
-                            <option value="ES">Spanien</option>
-                            <option value="CZ">Tschechische Republik</option>
-                            <option value="HU">Ungarn</option>
-                            <option value="GB">Vereinigtes Königreich</option>
-                            <option value="CY">Zypern</option>
-                        </select> <br>
-                        <label for="phone">Telefon: </label>
-                        <input type="tel" id="phone" name="Telephone"><br>
-                        <label for="mail">Email: </label>
-                        <input type="email" id="mail" name="Email">
-                        <br><br>
-                        <label for="password">Passwort: </label>
-                        <input type="password" id="password" name="Passwort"><br>
-                        <label for="passwordcheck">Passwort bestätigen: </label>
-                        <input type="password" id="passwordcheck" name="Passwort bestätigen"><br><br>
-                        <label for="file">Datei hochladen: </label>
-                        <input type="file" id="file"><br><br>
-                        Akzeptierst du die Nutzungsbedingungen?<br>
-                        <label for="yes">Ja</label>
-                        <input type="radio" id="yes" name="tos" value="yes">
-                        <label for="no">Nein</label>
-                        <input type="radio" id="no" name="tos" value="no"><br><br>
-                        <input type="submit">
+<details style="overflow-x: auto;">
+    <summary>Tabelle</summary>
+    <br><br>
 
-                    </fieldset>
-                </form>
-
-            </details>
-
-            <h3>Tabellen</h3>
-
-            <details style="overflow-x: auto;">
-                <summary>Tabelle</summary>
-                <br><br>
-
-                <table id="normalt">
-                    <caption>Überstunden</caption>
-                    <tr>
-                        <th>Montag</th>
-                        <th>Dienstag</th>
-                        <th>Mittwoch</th>
-                        <th>Donnerstag</th>
-                        <th>Freitag</th>
-                        <th>Samstag</th>
-                        <th>Sonntag</th>
-                    </tr>
-                    <tr style="text-align: center">
-                        <td>1</td>
-                        <td>2</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>2</td>
-                        <td>0</td>
-                    </tr>
-                </table>
-
-            </details>
-
-        </article>
-    </section>
-
-</div>
-
-<footer>
-    <button id="contact" onclick="window.location.href = 'contact.php'">Contact</button>
-    <span> von <b>Richard Borgardt || richard.borgardt@web.de</b> </span><br>
-    <b>Datum:</b> <span id="date"></span> <b>|| Zeit:</b> <span id="time"></span> Uhr
-</footer>
-
-</body>
-</html>
-
-<!-- Skript für Datum- und Zeitstempel im Footer -->
-<script>
-    var dt = new Date();
-    const options = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
-    document.getElementById("date").innerHTML = dt.toLocaleDateString("de-DE", options);
-    document.getElementById("time").innerHTML = dt.toLocaleTimeString("de-DE");
-</script>
+    <table id="normalt">
+        <caption>Überstunden</caption>
+        <tr>
+            <th>Montag</th>
+            <th>Dienstag</th>
+            <th>Mittwoch</th>
+            <th>Donnerstag</th>
+            <th>Freitag</th>
+            <th>Samstag</th>
+            <th>Sonntag</th>
+        </tr>
+        <tr style="text-align: center">
+            <td>1</td>
+            <td>2</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>2</td>
+            <td>0</td>
+        </tr>
+    </table>
+</details>
