@@ -3,7 +3,7 @@
 <h2> Contact </h2>
 <p class="text">Du hast Fragen? Schreibe eine Nachricht:</p>
 
-<form method="post" action="php/contact_submission.php">
+<form method="post" action="php/contact_submission.php" id="contactform">
     <label for="name" class="contactlabel">Name</label><br><span
             class="error"><?php echo $_SESSION["nameErr"] ?></span><br>
     <input type="text" id="name" name="name" placeholder="Name*"
