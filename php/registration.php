@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
 //Connection
 $db_host = 'dev.internship.com';
 $db_username = 'root';
@@ -12,9 +11,17 @@ $conn = new mysqli($db_host, $db_username, $db_password, $db_name);
 
 $_SESSION["regEmail"] = $_SESSION["regUsername"] = "";
 $_SESSION["regEmailErr"] = $_SESSION["regUsernameErr"] = $_SESSION["regPasswordErr"] = "";
-$regPassword = $confirmregPassword = $regPassword_hash = "";
+$regPassword_hash = "";
 $_SESSION["confirmRegistration"] = "";
 $break = false;
+
+//Security check
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
 
 //FORM DATA
 
@@ -26,9 +33,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $break = true;
     } else {
         //Ist der Username schon vergeben?
-        $statement = $conn->prepare("SELECT Username FROM users WHERE Username = " . $_POST['username'] . " ");
-        $user = $statement->fetch();
-        if ($user !== false) {
+        $statement = $conn->prepare("SELECT Username FROM users WHERE Username = ?");
+        $sql = "SELECT Username FROM users WHERE Username = '".$_POST['username']."'";
+        $result = $conn->query($sql);
+        if (mysqli_num_rows($result) !=0) {
             $_SESSION["regUsernameErr"] = "Dieser Username ist bereits registriert!";
             $break = true;
         } else {
@@ -43,32 +51,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "1";
     } else {
         //Ist die Email schon vergeben?
-        $statement = $conn->prepare("SELECT email FROM users WHERE email = " . $_POST['email'] . " ");
-        $user = $statement->fetch();
-        if ($user !== false) {
+        $sql = "SELECT Email FROM users WHERE Email = '".$_POST['email']."'";
+        $result = $conn->query($sql);
+        if (mysqli_num_rows($result) !=0) {
             $_SESSION["regEmailErr"] = "Diese Email-Adresse ist bereits registriert!";
-            echo "2";
-
             $break = true;
         } else {
-            $_SESSION["regEmail"] = test_input(["email"]);
+            $_SESSION["regEmail"] = test_input($_POST["email"]);
         }
     }
 
-    if (empty($_POST["regPassword"])) {
+    if (empty($_POST["password"])) {
         $_SESSION["regPasswordErr"] = "Passwort fehlt!";
         $break = true;
-        echo "3";
-
     } else {
-        if (strcmp($regPassword, $confirmregPassword) !== 0) {
+        if ($_POST["password"] !== $_POST["confirmpassword"]) {
             //Stimmen die Passwörter überein?
             $_SESSION["regPasswordErr"] = "Die Passwörter stimmen nicht überein!";
             $break = true;
-
         } else {
             //Passwort wird verschlüsselt
-            $regPassword_hash = password_hash($regPassword, PASSWORD_DEFAULT);
+            $regPassword_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
         }
     }
 
@@ -76,3 +79,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 //Register User
 
+if (!$break) {
+
+    if ($conn->connect_error) {
+        die("Connection Failed: "
+            . $conn->connect_error);
+    }
+    $regUsername=$_SESSION["regUsername"];
+    $regEmail=$_SESSION["regEmail"];
+    $timestamp = date("y.m.d");
+    $sql="INSERT INTO users (Username, Email, Password, registriert_am) VALUES ('$regUsername','$regEmail','$regPassword_hash','$timestamp')";
+    $result = $conn->query($sql);
+    $_SESSION["confirmRegistration"] = "Registrierung erfolgreich! Sie können sich jetzt einloggen.";
+
+    $_SESSION["regEmailErr"] = $_SESSION["regUsernameErr"] = $_SESSION["regPasswordErr"] = "";
+    $_SESSION["regEmail"] = $_SESSION["regUsername"] = "";
+}
+
+//Head back to Registerpage
+
+header("Location: ../?register=1");

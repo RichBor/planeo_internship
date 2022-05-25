@@ -1,4 +1,5 @@
 <?php
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="DE">
@@ -11,7 +12,8 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.js"></script>
+    <script src="/js/modal.js"></script>
 </head>
 
 <body>
@@ -93,16 +95,16 @@
                     <div class="modal-body">
                         <form action="php/registration.php" method="post">
                             <div class="form-group">
-                                <span><?php echo $_SESSION["confirmRegistration"]?></span><br><br>
-                                <span class="error"><?php echo $_SESSION["regUsernameErr"]?></span><br>
-                                <input type="text" class="form-control" name="username" placeholder="Username" value="<?php echo $_SESSION["regUsername"]?>">
+                                <span><?php echo $_SESSION["confirmRegistration"]; $_SESSION["confirmRegistration"]=""?></span><br><br>
+                                <span class="error"><?php echo $_SESSION["regUsernameErr"];$_SESSION["regUsernameErr"]=""?></span><br>
+                                <input type="text" class="form-control" name="username" placeholder="Username" value="<?php echo $_SESSION["regUsername"]; $_SESSION["regUsername"]="" ?>">
                             </div>
                             <div class="form-group">
-                                <span class="error"><?php echo $_SESSION["regEmailErr"]?></span><br>
-                                <input type="text" class="form-control" name="email" placeholder="Email" value="<?php echo $_SESSION["regEmail"]?>">
+                                <span class="error"><?php echo $_SESSION["regEmailErr"];$_SESSION["regEmailErr"]=""?></span><br>
+                                <input type="text" class="form-control" name="email" placeholder="Email" value="<?php echo $_SESSION["regEmail"]; $_SESSION["regEmail"]="" ?>">
                             </div>
                             <div class="form-group">
-                                <span class="error"><?php echo $_SESSION["regPasswordErr"]?></span><br>
+                                <span class="error"><?php echo $_SESSION["regPasswordErr"];$_SESSION["regPasswordErr"]="" ?></span><br>
                                 <input type="password" class="form-control" name="password" placeholder="Password">
                             </div>
                             <div class="form-group">
@@ -164,3 +166,15 @@
     document.getElementById("time").innerHTML = dt.toLocaleTimeString("de-DE");
 </script>
 
+<script>
+    var url_string = window.location.href;
+    var url = new URL(url_string);
+    var register = url.searchParams.get("register");
+    var login = url.searchParams.get("login");
+    if(register==="1") {
+        $("#RegisterModal").modal('show');
+    }
+    if(login==="1") {
+        $("#LoginModal").modal('show')
+    }
+</script>

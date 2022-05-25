@@ -69,7 +69,10 @@ if(!$break) {
         $stmt->execute();
         $_SESSION["name"] = $_SESSION["vorname"] = $_SESSION["email"] = $_SESSION["nachricht"] = "";
         $_SESSION["nameErr"] = $_SESSION["vornameErr"] = $_SESSION["emailErr"] = $_SESSION["nachrichtErr"] = "";
+
+        $_SESSION["name"] = $_SESSION["vorname"] = $_SESSION["email"] = $_SESSION["nachricht"] = "";
+        $_SESSION["nameErr"] = $_SESSION["vornameErr"] = $_SESSION["emailErr"] = $_SESSION["nachrichtErr"] = "";
     }
 }
 
-header("Location: ../index.php?s=contact");
+header("Location: ../?s=contact");
