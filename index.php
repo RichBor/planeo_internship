@@ -1,20 +1,31 @@
 <?php
+session_start();
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="DE">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Internship Planeo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.js"></script>
+    <script src="/js/modal.js"></script>
 </head>
 
 <body>
 <div id="wrapper">
     <div class="header">
-        <h1>Planeo Internship</h1>
-        <a href="index.php"><img src="imgs/planeo-logo.svg" id="planeopic" alt="planeo"></a>
+        <?php
+            if(isset($_COOKIE["user"])) {
+                include "php/loggedinHeader.php";
+            } else {
+                include "php/loggedoutHeader.php";
+            }
+        ?>
     </div>
     <section>
         <nav>
@@ -22,30 +33,101 @@
                 switch($_GET["s"]) {
                     case 'tags':
                         echo "
-                        <p class='navp'><a href='index.php'>| Start |</a></p>
-                        <p class='navp''><a href='index.php?s=htmlandcss'>| HTML & CSS |</p>
+                        <p class='navp'><a class='a' href='index.php'>| Start |</a></p>
+                        <p class='navp''><a class='a' href='index.php?s=htmlandcss'>| HTML & CSS |</p>
                         <p class='navp' id='currentsite'>| HTML Tags |</a></p> ";
                         break;
                     case 'htmlandcss':
                         echo "
-                        <p class='navp'><a href='index.php'>| Start |</a></p>
+                        <p class='navp'><a class='a' href='index.php'>| Start |</a></p>
                         <p class='navp' id='currentsite'>| HTML & CSS |</p>
-                        <p class='navp'><a href='index.php?s=tags'>| HTML Tags |</a></p> ";
+                        <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> ";
                         break;
                     case 'contact':
                         echo "
-                        <p class='navp'><a href='index.php'>| Start |</a></p>
-                        <p class='navp''><a href='index.php?s=htmlandcss'>| HTML & CSS |</a></p>
-                        <p class='navp'><a href='index.php?s=tags'>| HTML Tags |</a></p> ";
+                        <p class='navp'><a class='a' href='index.php'>| Start |</a></p>
+                        <p class='navp''><a class='a' href='index.php?s=htmlandcss'>| HTML & CSS |</a></p>
+                        <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> ";
                         break;
                     default:
                         echo "
                         <p class='navp' id='currentsite'>| Start |</p>
-                        <p class='navp''><a href='index.php?s=htmlandcss'>| HTML & CSS |</a></p>
-                        <p class='navp'><a href='index.php?s=tags'>| HTML Tags |</a></p> ";
+                        <p class='navp''><a class='a' href='index.php?s=htmlandcss'>| HTML & CSS |</a></p>
+                        <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> ";
                 }
             ?>
         </nav>
+
+        <!-- LOGIN MODAL -->
+
+        <div id="LoginModal" class="modal fade">
+            <div class="modal-dialog modal-login">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Member Login</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="php/login.php" method="post">
+                            <div class="form-group">
+                                <span><?php echo $_SESSION["confirmLogin"]; $_SESSION["confirmLogin"]=""?></span><br><br>
+                                <span class="error"><?php echo $_SESSION["logUsernameErr"];$_SESSION["logUsernameErr"]=""?></span><br>
+                                <input type="text" class="form-control" name="username" placeholder="Username" value="<?php echo $_SESSION["logUsername"]; $_SESSION["logUsername"]="" ?>">
+                            </div>
+                            <div class="form-group">
+                                <span class="error"><?php echo $_SESSION["logPasswordErr"];$_SESSION["logPasswordErr"]=""?></span><br>
+                                <input type="password" class="form-control" name="password" placeholder="Password"><br><br>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#RegisterModal" class="trigger-btn" data-toggle="modal" data-dismiss="modal">Register?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- REGISTER MODAL -->
+
+        <div id="RegisterModal" class="modal fade">
+            <div class="modal-dialog modal-login">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Member Registration</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="php/registration.php" method="post">
+                            <div class="form-group">
+                                <span><?php echo $_SESSION["confirmRegistration"]; $_SESSION["confirmRegistration"]=""?></span><br><br>
+                                <span class="error"><?php echo $_SESSION["regUsernameErr"];$_SESSION["regUsernameErr"]=""?></span><br>
+                                <input type="text" class="form-control" name="username" placeholder="Username" value="<?php echo $_SESSION["regUsername"]; $_SESSION["regUsername"]="" ?>">
+                            </div>
+                            <div class="form-group">
+                                <span class="error"><?php echo $_SESSION["regEmailErr"];$_SESSION["regEmailErr"]=""?></span><br>
+                                <input type="text" class="form-control" name="email" placeholder="Email" value="<?php echo $_SESSION["regEmail"]; $_SESSION["regEmail"]="" ?>">
+                            </div>
+                            <div class="form-group">
+                                <span class="error"><?php echo $_SESSION["regPasswordErr"];$_SESSION["regPasswordErr"]="" ?></span><br>
+                                <input type="password" class="form-control" name="password" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <br><input type="password" class="form-control" name="confirmpassword" placeholder="Password bestätigen"><br>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Register</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#LoginModal" class="trigger-btn" data-toggle="modal" data-dismiss="modal">Login?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <article>
             <?php
@@ -80,6 +162,7 @@
 
 
 </body>
+
 </html>
 
 <!-- Skript für Datum- und Zeitstempel im Footer -->
@@ -88,4 +171,17 @@
     const options = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
     document.getElementById("date").innerHTML = dt.toLocaleDateString("de-DE", options);
     document.getElementById("time").innerHTML = dt.toLocaleTimeString("de-DE");
+</script>
+
+<script>
+    var url_string = window.location.href;
+    var url = new URL(url_string);
+    var register = url.searchParams.get("register");
+    var login = url.searchParams.get("login");
+    if(register==="1") {
+        $("#RegisterModal").modal('show');
+    }
+    if(login==="1") {
+        $("#LoginModal").modal('show')
+    }
 </script>
