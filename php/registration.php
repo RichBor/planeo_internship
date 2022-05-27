@@ -16,7 +16,9 @@ $_SESSION["confirmRegistration"] = "";
 $break = false;
 
 //Security check
-function test_input($data) {
+
+function test_input($data)
+{
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
@@ -24,7 +26,6 @@ function test_input($data) {
 }
 
 //FORM DATA
-
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -34,9 +35,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         //Ist der Username schon vergeben?
         $statement = $conn->prepare("SELECT Username FROM users WHERE Username = ?");
-        $sql = "SELECT Username FROM users WHERE Username = '".$_POST['username']."'";
+        $sql = "SELECT Username FROM users WHERE Username = '" . $_POST['username'] . "'";
         $result = $conn->query($sql);
-        if (mysqli_num_rows($result) !=0) {
+        if (mysqli_num_rows($result) != 0) {
             $_SESSION["regUsernameErr"] = "Dieser Username ist bereits registriert!";
             $break = true;
         } else {
@@ -51,9 +52,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "1";
     } else {
         //Ist die Email schon vergeben?
-        $sql = "SELECT Email FROM users WHERE Email = '".$_POST['email']."'";
+        $sql = "SELECT Email FROM users WHERE Email = '" . $_POST['email'] . "'";
         $result = $conn->query($sql);
-        if (mysqli_num_rows($result) !=0) {
+        if (mysqli_num_rows($result) != 0) {
             $_SESSION["regEmailErr"] = "Diese Email-Adresse ist bereits registriert!";
             $break = true;
         } else {
@@ -85,10 +86,10 @@ if (!$break) {
         die("Connection Failed: "
             . $conn->connect_error);
     }
-    $regUsername=$_SESSION["regUsername"];
-    $regEmail=$_SESSION["regEmail"];
+    $regUsername = $_SESSION["regUsername"];
+    $regEmail = $_SESSION["regEmail"];
     $timestamp = date("y.m.d");
-    $sql="INSERT INTO users (Username, Email, Password, registriert_am) VALUES ('$regUsername','$regEmail','$regPassword_hash','$timestamp')";
+    $sql = "INSERT INTO users (Username, Email, Password, registriert_am) VALUES ('$regUsername','$regEmail','$regPassword_hash','$timestamp')";
     $result = $conn->query($sql);
     $_SESSION["confirmRegistration"] = "Registrierung erfolgreich! Sie können sich jetzt einloggen.";
 

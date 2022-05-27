@@ -19,9 +19,13 @@ session_start();
 <body>
 <div id="wrapper">
     <div class="header">
-        <h1>Planeo Internship</h1>
-        <span class="btn btn-success"><a href="#LoginModal" class="trigger-btn" data-toggle="modal" style="color: white">Login</a></span>
-        <a href="index.php"><img src="imgs/planeo-logo.svg" id="planeopic" alt="planeo"></a>
+        <?php
+            if(isset($_COOKIE["user"])) {
+                include "php/loggedinHeader.php";
+            } else {
+                include "php/loggedoutHeader.php";
+            }
+        ?>
     </div>
     <section>
         <nav>
@@ -64,12 +68,15 @@ session_start();
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <form action="" method="post">
+                        <form action="php/login.php" method="post">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="username" placeholder="Username" required="required">
+                                <span><?php echo $_SESSION["confirmLogin"]; $_SESSION["confirmLogin"]=""?></span><br><br>
+                                <span class="error"><?php echo $_SESSION["logUsernameErr"];$_SESSION["logUsernameErr"]=""?></span><br>
+                                <input type="text" class="form-control" name="username" placeholder="Username" value="<?php echo $_SESSION["logUsername"]; $_SESSION["logUsername"]="" ?>">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+                                <span class="error"><?php echo $_SESSION["logPasswordErr"];$_SESSION["logPasswordErr"]=""?></span><br>
+                                <input type="password" class="form-control" name="password" placeholder="Password"><br><br>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Login</button>
