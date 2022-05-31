@@ -66,7 +66,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 mysqli_query($conn, $sql);
                 $sql = "UPDATE profileimg SET path='" . $imgNameNew . "' WHERE f_UID= '" . getID() . "' ";
                 mysqli_query($conn, $sql);
-                header("Location: ../index.php?uploadsuccess");
+                header("Location: ../index.php");
             } else {
                 $_SESSION['uploadErr'] = "There was an Error!";
             }

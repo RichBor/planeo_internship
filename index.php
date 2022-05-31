@@ -219,7 +219,7 @@ function getFilePath() {
                         if(getimgStatus()==0) {
                             echo "<img src='profileimgs/profiledefault.png'>";
                         } else {
-                            echo "<img src='".getFilePath()."' height='400px' width='400px'>";
+                            echo "<img src='".getFilePath()."?".mt_rand()."' height='400px' width='400px'>";
                         }
                         echo "<form action='php/imgupload.php' method='post' enctype='multipart/form-data'>
                                 <input type='file' name='img' class='btn btn-sucess'>

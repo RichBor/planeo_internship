@@ -96,11 +96,11 @@ if (!$break) {
     $sql = "SELECT p_uID FROM users WHERE Username LIKE ".$user;
     $resultgetID=mysqli_query($conn, $sql);
     $rowgetID=mysqli_fetch_assoc($resultgetID);
-    $id=$rowgetID['p_uID'];
+    $id="'".$rowgetID['p_uID']."'";
     //insert default value for profile img
     $sql="INSERT INTO profileimg (f_UID, status) VALUES ($id, 0)";
     mysqli_query($conn, $sql);
-
+    echo '<pre>'; var_dump($sql);
 
     $_SESSION["confirmRegistration"] = "Registrierung erfolgreich! Sie können sich jetzt einloggen.";
 
