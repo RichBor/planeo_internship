@@ -1,5 +1,70 @@
 <?php
 session_start();
+
+function getID(){
+    //Connection
+
+    $db_host = 'dev.internship.com';
+    $db_username = 'root';
+    $db_password = 'Password1';
+    $db_name = 'internship';
+
+    $conn = new mysqli($db_host, $db_username, $db_password, $db_name);
+
+
+    //get ID
+
+    $user="'".$_COOKIE['user']."'";
+    $sql = "SELECT p_uID FROM users WHERE Username LIKE ".$user;
+
+    $resultgetID = mysqli_query($conn, $sql);
+
+    if(mysqli_num_rows($resultgetID) >0) {
+        $rowgetID = mysqli_fetch_assoc($resultgetID);
+        $id=$rowgetID['p_uID'];
+    } else {
+        return "error";
+    }
+    return $id;
+}
+
+function getimgStatus() {
+    //Connection
+
+    $db_host = 'dev.internship.com';
+    $db_username = 'root';
+    $db_password = 'Password1';
+    $db_name = 'internship';
+
+    $conn = new mysqli($db_host, $db_username, $db_password, $db_name);
+
+    //get status
+    $id="'".getID()."'";
+    $sql="SELECT status FROM profileimg WHERE f_UID LIKE ".$id;
+    $result=mysqli_query($conn, $sql);
+    $row=mysqli_fetch_assoc($result);
+    return $row['status'];
+}
+
+function getFilePath() {
+    //Connection
+
+    $db_host = 'dev.internship.com';
+    $db_username = 'root';
+    $db_password = 'Password1';
+    $db_name = 'internship';
+
+    $conn = new mysqli($db_host, $db_username, $db_password, $db_name);
+
+    //get file path
+    $id="'".getID()."'";
+    $sql="SELECT path FROM profileimg WHERE f_UID LIKE ".$id;
+    $result=mysqli_query($conn, $sql);
+    $row=mysqli_fetch_assoc($result);
+
+    return "/profileimgs/".$row['path'];
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="DE">
@@ -30,32 +95,36 @@ session_start();
     <section>
         <nav>
             <?php
-                switch($_GET["s"]) {
-                    case 'tags':
-                        echo "
-                        <p class='navp'><a class='a' href='index.php'>| Start |</a></p>
-                        <p class='navp''><a class='a' href='index.php?s=htmlandcss'>| HTML & CSS |</p>
-                        <p class='navp' id='currentsite'>| HTML Tags |</a></p> ";
-                        break;
-                    case 'htmlandcss':
-                        echo "
-                        <p class='navp'><a class='a' href='index.php'>| Start |</a></p>
-                        <p class='navp' id='currentsite'>| HTML & CSS |</p>
-                        <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> ";
-                        break;
-                    case 'contact':
-                        echo "
-                        <p class='navp'><a class='a' href='index.php'>| Start |</a></p>
-                        <p class='navp''><a class='a' href='index.php?s=htmlandcss'>| HTML & CSS |</a></p>
-                        <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> ";
-                        break;
-                    default:
-                        echo "
-                        <p class='navp' id='currentsite'>| Start |</p>
-                        <p class='navp''><a class='a' href='index.php?s=htmlandcss'>| HTML & CSS |</a></p>
-                        <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> ";
+                if(isset($_COOKIE["user"])) {
+                    switch ($_GET["s"]) {
+                        case 'tags':
+                            echo "
+                            <p class='navp'><a class='a' href='index.php'>| Start |</a></p>
+                            <p class='navp''><a class='a' href='index.php?s=htmlandcss'>| HTML & CSS |</p>
+                            <p class='navp' id='currentsite'>| HTML Tags |</a></p> ";
+                            break;
+                        case 'htmlandcss':
+                            echo "
+                            <p class='navp'><a class='a' href='index.php'>| Start |</a></p>
+                            <p class='navp' id='currentsite'>| HTML & CSS |</p>
+                            <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> ";
+                            break;
+                        case 'contact':
+                            echo "
+                            <p class='navp'><a class='a' href='index.php'>| Start |</a></p>
+                            <p class='navp''><a class='a' href='index.php?s=htmlandcss'>| HTML & CSS |</a></p>
+                            <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> ";
+                            break;
+                        default:
+                            echo "
+                            <p class='navp' id='currentsite'>| Start |</p>
+                            <p class='navp''><a class='a' href='index.php?s=htmlandcss'>| HTML & CSS |</a></p>
+                            <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> ";
+                    }
+                } else {
+                    echo "<p class='navp' id='currentsite'>| Start |</p>";
                 }
-            ?>
+                ?>
         </nav>
 
         <!-- LOGIN MODAL -->
@@ -134,26 +203,43 @@ session_start();
 
             switch($_GET["s"]) {
                 case 'tags':
+                    if(isset($_COOKIE["user"]))
                     include "html/tags.html";
                     break;
                 case 'htmlandcss':
+                    if(isset($_COOKIE["user"]))
                     include "html/htmlandcss.html";
                     break;
                 case 'contact':
                     include "php/contact.php";
                     break;
                 default:
-                    echo "<h2> Mein HTML/CSS Projekt fuer mein Praktikum bei Planeo </h2>
+                    if(isset($_COOKIE['user'])) {
+                        echo "Sie sind als ".$_COOKIE['user']." eingeloggt!<br><br>";
+                        if(getimgStatus()==0) {
+                            echo "<img src='profileimgs/profiledefault.png'>";
+                        } else {
+                            echo "<img src='".getFilePath()."' height='400px' width='400px'>";
+                        }
+                        echo "<form action='php/imgupload.php' method='post' enctype='multipart/form-data'>
+                                <input type='file' name='img' class='btn btn-sucess'>
+                                <button class='btn btn-success' type='submit' name='submit'>Upload Image</button>
+                            </form>";
+                        echo "<p>".$_SESSION['uploadErr']."</p>";
+                        $_SESSION['uploadErr']="";
+                    } else {
+                        echo "<h2> Mein HTML/CSS Projekt fuer mein Praktikum bei Planeo </h2>
                           <p class='text'> Hier findet man ein bisschen Grundwissen zu HTML/CSS und wie ich es anwenden kann<br><br>09.
-                          Mai - 22. Juni </p>";
-            }
+                          Mai - 22. Juni </p>
+                          <p class='text'>Um all den Content zu sehen, <a href='#LoginModal' data-toggle='modal'>loggen</a> Sie sich bitte ein oder <a href='#RegisterModal' data-toggle='modal'>registrieren</a> Sie sich!</p>";
+                    }
+                }
 
             ?>
         </article>
     </section>
-
     <footer>
-        <button id="contact" onclick="window.location.href = 'index.php?s=contact'">Contact</button>
+        <button id="contact" class="btn btn-success" onclick="window.location.href = 'index.php?s=contact'">Contact</button>
         <span> von <b>Richard Borgardt || richard.borgardt@web.de</b> </span><br>
         <b>Datum:</b> <span id="date"></span> <b>|| Zeit:</b> <span id="time"></span> Uhr
     </footer>

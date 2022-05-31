@@ -91,6 +91,17 @@ if (!$break) {
     $timestamp = date("y.m.d");
     $sql = "INSERT INTO users (Username, Email, Password, registriert_am) VALUES ('$regUsername','$regEmail','$regPassword_hash','$timestamp')";
     $result = $conn->query($sql);
+    //get user id
+    $user="'".$_SESSION['regUsername']."'";
+    $sql = "SELECT p_uID FROM users WHERE Username LIKE ".$user;
+    $resultgetID=mysqli_query($conn, $sql);
+    $rowgetID=mysqli_fetch_assoc($resultgetID);
+    $id=$rowgetID['p_uID'];
+    //insert default value for profile img
+    $sql="INSERT INTO profileimg (f_UID, status) VALUES ($id, 0)";
+    mysqli_query($conn, $sql);
+
+
     $_SESSION["confirmRegistration"] = "Registrierung erfolgreich! Sie können sich jetzt einloggen.";
 
     $_SESSION["regEmailErr"] = $_SESSION["regUsernameErr"] = $_SESSION["regPasswordErr"] = "";
