@@ -35,9 +35,9 @@ nav {
     height: 30%;
     background-color: white;
     font-family: "Arial Black", Gadget, sans-serif;
-    font-size: 170%;
+    font-size: 160%;
     display: inline-block;
-    line-height: 180px;
+    line-height: 150px;
     position: sticky;
     top: 60px;
     z-index: 10;
@@ -161,10 +161,6 @@ details {
     margin-top: 25px;
     margin-bottom: 25px;
     width: 90%;
-}
-
-.i {
-    visibility: hidden;
 }
 
 #w3 {
@@ -357,6 +353,11 @@ input[type=submit] {
     color: red;
     float: left;
     font-weight: bold;
+}
+
+.errorbmi {
+    color: red;
+    position: center;
 }
 
 #settings {

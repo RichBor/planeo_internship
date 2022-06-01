@@ -101,26 +101,50 @@ function getFilePath() {
                             echo "
                             <p class='navp'><a class='a' href='index.php'>| Start |</a></p>
                             <p class='navp''><a class='a' href='index.php?s=htmlandcss'>| HTML & CSS |</p>
-                            <p class='navp' id='currentsite'>| HTML Tags |</a></p> ";
+                            <p class='navp' id='currentsite'>| HTML Tags |</a></p> 
+                            <p class='navp'><a class='a' href='index.php?s=bmirechner'>| BMI Rechner |</a></p>
+                            <p class='navp'><a class='a' href='index.php?s=isbnvalidator'>| ISBN Validator |</a></p>";
                             break;
                         case 'htmlandcss':
                             echo "
                             <p class='navp'><a class='a' href='index.php'>| Start |</a></p>
                             <p class='navp' id='currentsite'>| HTML & CSS |</p>
-                            <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> ";
+                            <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> 
+                            <p class='navp'><a class='a' href='index.php?s=bmirechner'>| BMI Rechner |</a></p>
+                            <p class='navp'><a class='a' href='index.php?s=isbnvalidator'>| ISBN Validator |</a></p>";
                             break;
                         case 'settings':
                         case 'contact':
                             echo "
                             <p class='navp'><a class='a' href='index.php'>| Start |</a></p>
                             <p class='navp''><a class='a' href='index.php?s=htmlandcss'>| HTML & CSS |</a></p>
-                            <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> ";
+                            <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> 
+                            <p class='navp'><a class='a' href='index.php?s=bmirechner'>| BMI Rechner |</a></p>
+                            <p class='navp'><a class='a' href='index.php?s=isbnvalidator'>| ISBN Validator |</a></p>";
+                            break;
+                        case 'bmirechner':
+                            echo "
+                            <p class='navp'><a class='a' href='index.php'>| Start |</a></p>
+                            <p class='navp''><a class='a' href='index.php?s=htmlandcss'>| HTML & CSS |</a></p>
+                            <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> 
+                            <p class='navp' id='currentsite'>| BMI Rechner |</p>
+                            <p class='navp'><a class='a' href='index.php?s=isbnvalidator'>| ISBN Validator |</a></p>";
+                            break;
+                        case 'isbnvalidator':
+                            echo "
+                            <p class='navp'><a class='a' href='index.php'>| Start |</a></p>
+                            <p class='navp''><a class='a' href='index.php?s=htmlandcss'>| HTML & CSS |</a></p>
+                            <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> 
+                            <p class='navp'><a class='a' href='index.php?s=bmirechner'>| BMI Rechner |</a></p>
+                            <p class='navp' id='currentsite'>| ISBN Validator |</p>";
                             break;
                         default:
                             echo "
                             <p class='navp' id='currentsite'>| Start |</p>
                             <p class='navp''><a class='a' href='index.php?s=htmlandcss'>| HTML & CSS |</a></p>
-                            <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> ";
+                            <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> 
+                            <p class='navp'><a class='a' href='index.php?s=bmirechner'>| BMI Rechner |</a></p>
+                            <p class='navp'><a class='a' href='index.php?s=isbnvalidator'>| ISBN Validator |</a></p>";
                     }
                 } else {
                     echo "<p class='navp' id='currentsite'>| Start |</p>";
@@ -216,6 +240,12 @@ function getFilePath() {
                     break;
                 case 'settings':
                     include "php/settings.php";
+                    break;
+                case 'bmirechner':
+                    include "php/bmirechner.php";
+                    break;
+                case 'isbnvalidator':
+                    include "php/isbnvalidator.php";
                     break;
                 default:
                     if(isset($_COOKIE['user'])) {
