@@ -49,3 +49,41 @@ die("Connection Failed: "
 . $conn->connect_error);
 }
 ```
+
+### MySqli Query
+
+Mit der Funktion ```mysqli_query()``` kann man einen SQL Befehl an die Datenbank schicken.\
+Hierzu speichert man den Befehl einfach in einer variable wie ```$sql```
+
+```
+$sql = "SELECT Password FROM users WHERE Username = 'admin'";
+$result = mysqli_query($conn, $sql);
+$row=mysqli_fetch_assoc($result);
+echo $row['Password']
+```
+
+Um den Query Befehl dann auszuführen, gibt man als Parameter die $conn und $sql variablen.\
+Der return-Wert wird in einer $result gespeichert, um damit dann die Daten aus der Abfrage zu ziehen.\
+Das geht mit ```mysqli_fetch_assoc()```. Die Daten werden in $row als Array gespeichert und können
+dann rausgelooped werden.
+
+### Password Hash
+
+Mit der Funktion ```password_hash()``` kann man ein Passwort hashen.
+
+```password_hash("PASSWORT", PASSWORD_DEFAULT);```
+
+Dabei wird ein zufälliger Salt generiert, der wie eine DNA für einen Passwort-Generator wirkt.
+Also kriegt man jedes mal wenn man "Passwort" hasht, einen anderen hash.\
+So könnte der hash von "admin" als Passwort aussehen:
+```$2y$10$7NK3L7g9LhZ68G7Q3xNTduCBGvBxUCKgkDcQ2ACxOQdDOiQNASNoK```
+
+### Password Verify
+
+Mit der Funktion ```password_verify()``` kann man ein gehashtes Passwort überprüfen
+
+```password verify("admin", $2y$10$7NK3L7g9LhZ68G7Q3xNTduCBGvBxUCKgkDcQ2ACxOQdDOiQNASNoK)```
+
+Der Salt des gehashten Passworts ist in dem String enthalten, und der Algorhytmus erkennt ihn.\
+Er hasht also den ersten Parameter "admin" und vergleicht ihn dann mit dem zweiten Parameter.\
+In dem Fall würde die Funktion "true" returnen, weil es übereinstimmt.
