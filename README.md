@@ -24,3 +24,5 @@ Funktionen mit einem LAMP-Setup:
 - Passwort ändern
 - Kontaktformular
 - Content nur sichtbar für eingeloggte User
+- BMI Rechner
+- ISBN Validator
