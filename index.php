@@ -255,7 +255,7 @@ function getFilePath() {
                         } else {
                             echo "<img src='".getFilePath()."?".mt_rand()."' height='400px' width='400px'>";
                         }
-                        echo "<form action='php/imgupload.php' method='post' enctype='multipart/form-data'>
+                        echo "<br><br><form action='php/imgupload.php' method='post' enctype='multipart/form-data'>
                                 <input type='file' name='img' class='btn btn-sucess'>
                                 <button class='btn btn-success' type='submit' name='submit'>Upload Image</button>
                             </form>";
