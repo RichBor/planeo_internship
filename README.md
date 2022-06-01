@@ -11,4 +11,16 @@ HTML/CSS Projekt mit praktischer Übung von wichtigen Basics in HTML & CSS.
 - [HTML](documentation/html.md)
 - [Linux](documentation/linux.md)
 - [Markdown](documentation/markdown.md)
+- [Apache](documentation/apache.md)
+- [MySQL](documentation/mysql.md)
+- [PHP](documentation/php.md)
+- [XAMPP](documentation/xampp.md)
 
+#### Funktionen
+
+Funktionen mit einem LAMP-Setup:
+- Login/Register-System
+- Profilbild Upload für jeden User
+- Passwort ändern
+- Kontaktformular
+- Content nur sichtbar für eingeloggte User
