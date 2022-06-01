@@ -70,7 +70,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST") {
 <form action="../index.php?s=isbnvalidator" method="post">
     <label for="isbn">ISBN</label><br>
     <span class="errorbmi"><?php echo $isbnErr; $isbnErr=""?></span><br>
-    <input type="text" id="isbn" name="isbn" placeholder="9780306406157"><br><br>
+    <input type="text" id="isbn" name="isbn" placeholder="9780306406157" value="<?php echo htmlspecialchars($_POST['isbn']) ?>"><br><br>
     <button type="submit" class="btn btn-success">Validate ISBN</button>
 </form>
 
