@@ -57,7 +57,7 @@ article {
     font-size: 150%;
     color: #592908;
     text-align: center;
-    margin-right: 50%;
+    margin-right: 5%;
 }
 
 footer {
@@ -298,6 +298,22 @@ iframe {
     margin: 8px 0 8px 20%;
 }
 
+#newpassword, #oldpassword, #newpasswordconfirm {
+    font-size: 120%;
+    width: 40%;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.resetpasswordlabel {
+    font-size: 110%;
+    font-weight: bold;
+    text-align: left;
+}
+
 .contactlabel {
     margin-left: 20%;
     font-size: 110%;
@@ -337,5 +353,19 @@ input[type=submit] {
     font-weight: bold;
 }
 
+.errorreset {
+    color: red;
+    float: left;
+    font-weight: bold;
+}
+
+#settings {
+    float: right;
+    margin-right: 5%;
+}
+
+#resetpwd {
+    text-align: left;
+}
 
 

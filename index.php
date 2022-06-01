@@ -109,6 +109,7 @@ function getFilePath() {
                             <p class='navp' id='currentsite'>| HTML & CSS |</p>
                             <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> ";
                             break;
+                        case 'settings':
                         case 'contact':
                             echo "
                             <p class='navp'><a class='a' href='index.php'>| Start |</a></p>
@@ -212,6 +213,9 @@ function getFilePath() {
                     break;
                 case 'contact':
                     include "php/contact.php";
+                    break;
+                case 'settings':
+                    include "php/settings.php";
                     break;
                 default:
                     if(isset($_COOKIE['user'])) {
