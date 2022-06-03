@@ -251,7 +251,7 @@ function getFilePath() {
                     if(isset($_COOKIE['user'])) {
                         echo "Sie sind als ".$_COOKIE['user']." eingeloggt!<br><br>";
                         if(getimgStatus()==0) {
-                            echo "<img src='profileimgs/profiledefault.png'>";
+                            echo "<img src='profileimgs/default.png'>";
                         } else {
                             echo "<img src='".getFilePath()."?".mt_rand()."' height='400px' width='400px'>";
                         }

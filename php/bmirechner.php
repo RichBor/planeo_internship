@@ -34,7 +34,7 @@ function getHeight() {
 
     $id="'".getuID()."'";
 
-    $sql="SELECT height FROM bmirechner WHERE f_uID=$id";
+    $sql="SELECT * FROM bmirechner WHERE f_uID=$id ORDER BY p_bID DESC LIMIT 1";
     $result=mysqli_query($conn, $sql);
     $row=mysqli_fetch_assoc($result);
 
@@ -56,7 +56,7 @@ function getWeight() {
 
     $id="'".getuID()."'";
 
-    $sql="SELECT weight FROM bmirechner WHERE f_uID=$id";
+    $sql="SELECT * FROM bmirechner WHERE f_uID=$id ORDER BY p_bID DESC LIMIT 1";
     $result=mysqli_query($conn, $sql);
     $row=mysqli_fetch_assoc($result);
 
@@ -78,7 +78,7 @@ function getBMI() {
 
     $id="'".getuID()."'";
 
-    $sql="SELECT bmi FROM bmirechner WHERE f_uID=$id";
+    $sql="SELECT * FROM bmirechner WHERE f_uID=$id ORDER BY p_bID DESC LIMIT 1";
     $result=mysqli_query($conn, $sql);
     $row=mysqli_fetch_assoc($result);
 
@@ -111,17 +111,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $sql="SELECT * FROM bmirechner WHERE f_uID=$id";
             $result=mysqli_query($conn, $sql);
-            if(mysqli_num_rows($result) == 0) {
-                $sql="INSERT INTO bmirechner (f_UID, height, weight, bmi) VALUES ($id,$height,$weight,$bmi )";
-                mysqli_query($conn, $sql);
-            } else {
-                $sql="DELETE FROM bmirechner WHERE f_uID=$id";
-                mysqli_query($conn, $sql);
-
-                $sql="INSERT INTO bmirechner (f_UID, height, weight, bmi) VALUES ($id,$height,$weight,$bmi )";
-                mysqli_query($conn, $sql);
-            }
-
+            $timestamp ="'".date("y.m.d")."'";
+            $sql="INSERT INTO bmirechner (f_UID, height, weight, bmi, insertdate) VALUES ($id,$height,$weight,$bmi, $timestamp)";
+            mysqli_query($conn, $sql);
             $confirmUpdate = "Daten erfolgreich aktualisiert!";
         } else {
             $bodyweightErr = "Körpergewicht ist leer!";
@@ -149,3 +141,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </form>
 <br>
 <p class="text">Dein BMI beträgt: <?php echo getBMI()?></p>
+<br><br><br>
+
+<form action="php/exportBmi.php" method="post">
+    <button class="btn btn-success" name="csv" value="csv">Export table to .csv</button><br><br>
+</form>
+
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th scope='col'>EintragsID</th>
+      <th scope='col'>Größe</th>
+      <th scope='col'>Gewicht</th>
+      <th scope='col'>BMI</th>
+      <th scope='col'>Eintragsdatum</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  <?php
+    $id="'".getuID()."'";
+    $sql="SELECT p_bID, height, weight, bmi, DATE_FORMAT(insertdate, '%d.%m.%Y') AS timestamp FROM bmirechner WHERE f_uID=$id ORDER BY p_bID DESC";
+    $result=mysqli_query($conn, $sql);
+    while($row=mysqli_fetch_assoc($result)) {
+        ?>
+        <tr>
+            <th scope="row"><?php echo $row['p_bID']?></th>
+            <td><?php echo $row['height']?></td>
+            <td><?php echo $row['weight']?></td>
+            <td><?php echo $row['bmi']?></td>
+            <td><?php echo $row['timestamp']?></td>
+        </tr>
+        <?php
+    }
+  ?>
+  </tbody>
+</table>
