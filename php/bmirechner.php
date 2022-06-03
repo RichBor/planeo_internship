@@ -103,12 +103,10 @@ $bodyheightErr = $bodyweightErr = $confirmUpdate = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(!empty($_POST["bodyheight"])) {
         if(!empty($_POST["bodyweight"])) {
-            $bmi = "'".($_POST["bodyweight"] / ($_POST["bodyheight"]*$_POST["bodyheight"]))."'";
-
+            $bmi = "'".round(($_POST["bodyweight"] / ($_POST["bodyheight"]*$_POST["bodyheight"])), 2)."'";
             $id="'".getuID()."'";
             $weight ="'".$_POST["bodyweight"]."'";
             $height ="'".$_POST["bodyheight"]."'";
-
             $sql="SELECT * FROM bmirechner WHERE f_uID=$id";
             $result=mysqli_query($conn, $sql);
             $timestamp ="'".date("y.m.d")."'";
