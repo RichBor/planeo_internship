@@ -1,0 +1,30 @@
+
+version : '3.7'
+services:
+  web:
+    image: richbor/internship_planeo:webcontent
+    container_name: php
+    depends_on:
+      - db
+    ports:
+      - 80:80
+    environment:
+      - PMA_ARBITRARY=1
+  db:
+    container_name: mysql
+    image: richbor/internship_planeo:dbstructure
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Password1
+      MYSQL_DATABASE: internship
+    ports:
+      - 6033:3306
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      - PMA_HOST=db
+    restart: always
+    ports:
+      - 81:80
