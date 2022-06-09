@@ -4,7 +4,7 @@ session_start();
 
 //Connection
 
-$db_host = 'dev.internship.com';
+$db_host = 'db';
 $db_username = 'root';
 $db_password = 'Password1';
 $db_name = 'internship';

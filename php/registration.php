@@ -2,7 +2,7 @@
 session_start();
 
 //Connection
-$db_host = 'dev.internship.com';
+$db_host = 'db';
 $db_username = 'root';
 $db_password = 'Password1';
 $db_name = 'internship';
@@ -34,7 +34,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $break = true;
     } else {
         //Ist der Username schon vergeben?
-        $statement = $conn->prepare("SELECT Username FROM users WHERE Username = ?");
         $sql = "SELECT Username FROM users WHERE Username = '" . $_POST['username'] . "'";
         $result = $conn->query($sql);
         if (mysqli_num_rows($result) != 0) {
@@ -49,7 +48,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["email"]) || !filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
         $_SESSION["regEmailErr"] = "Email fehlt oder ungültige Email!";
         $break = true;
-        echo "1";
     } else {
         //Ist die Email schon vergeben?
         $sql = "SELECT Email FROM users WHERE Email = '" . $_POST['email'] . "'";
@@ -100,7 +98,6 @@ if (!$break) {
     //insert default value for profile img
     $sql="INSERT INTO profileimg (f_UID, status) VALUES ($id, 0)";
     mysqli_query($conn, $sql);
-    echo '<pre>'; var_dump($sql);
 
     $_SESSION["confirmRegistration"] = "Registrierung erfolgreich! Sie können sich jetzt einloggen.";
 

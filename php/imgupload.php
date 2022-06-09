@@ -4,7 +4,7 @@ session_start();
 function getID(){
     //Connection
 
-    $db_host = 'dev.internship.com';
+    $db_host = 'db';
     $db_username = 'root';
     $db_password = 'Password1';
     $db_name = 'internship';
@@ -30,7 +30,7 @@ function getID(){
 
 //Connection
 
-$db_host = 'dev.internship.com';
+$db_host = 'db';
 $db_username = 'root';
 $db_password = 'Password1';
 $db_name = 'internship';
@@ -58,10 +58,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 $imgNameNew = "profile" . getID() . "." . $imgActualExt;
                 $imgDestination = "../profileimgs/" . $imgNameNew;
-                echo '<pre>';
-                var_dump(move_uploaded_file($imgTmpName, $imgDestination));
                 move_uploaded_file($imgTmpName, $imgDestination);
-
                 $sql = "UPDATE profileimg SET status=1 WHERE f_UID= '" . getID() . "' ";
                 mysqli_query($conn, $sql);
                 $sql = "UPDATE profileimg SET path='" . $imgNameNew . "' WHERE f_UID= '" . getID() . "' ";

@@ -1,10 +1,16 @@
 <?php
 session_start();
 
+if(isset($_GET["logout"])) {
+    setcookie("user", "", time()-3600);
+    header("Location: index.php");
+    exit();
+}
+
 function getID(){
     //Connection
 
-    $db_host = 'dev.internship.com';
+    $db_host = 'db';
     $db_username = 'root';
     $db_password = 'Password1';
     $db_name = 'internship';
@@ -31,7 +37,7 @@ function getID(){
 function getimgStatus() {
     //Connection
 
-    $db_host = 'dev.internship.com';
+    $db_host = 'db';
     $db_username = 'root';
     $db_password = 'Password1';
     $db_name = 'internship';
@@ -49,7 +55,7 @@ function getimgStatus() {
 function getFilePath() {
     //Connection
 
-    $db_host = 'dev.internship.com';
+    $db_host = 'db';
     $db_username = 'root';
     $db_password = 'Password1';
     $db_name = 'internship';
@@ -64,7 +70,6 @@ function getFilePath() {
 
     return "/profileimgs/".$row['path'];
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="DE">
@@ -81,6 +86,7 @@ function getFilePath() {
     <script src="/js/modal.js"></script>
 </head>
 
+
 <body>
 <div id="wrapper">
     <div class="header">
@@ -91,6 +97,7 @@ function getFilePath() {
                 include "php/loggedoutHeader.php";
             }
         ?>
+
     </div>
     <section>
         <nav>

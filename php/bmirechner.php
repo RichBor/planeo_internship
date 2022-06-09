@@ -2,7 +2,7 @@
 
 function getuID(){
     //get ID
-    $db_host = 'dev.internship.com';
+    $db_host = 'db';
     $db_username = 'root';
     $db_password = 'Password1';
     $db_name = 'internship';
@@ -25,7 +25,7 @@ function getuID(){
 
 function getHeight() {
     //Connection
-    $db_host = 'dev.internship.com';
+    $db_host = 'db';
     $db_username = 'root';
     $db_password = 'Password1';
     $db_name = 'internship';
@@ -47,7 +47,7 @@ function getHeight() {
 
 function getWeight() {
     //Connection
-    $db_host = 'dev.internship.com';
+    $db_host = 'db';
     $db_username = 'root';
     $db_password = 'Password1';
     $db_name = 'internship';
@@ -69,7 +69,7 @@ function getWeight() {
 
 function getBMI() {
     //Connection
-    $db_host = 'dev.internship.com';
+    $db_host = 'db';
     $db_username = 'root';
     $db_password = 'Password1';
     $db_name = 'internship';
@@ -90,7 +90,7 @@ function getBMI() {
 }
 
 //Connection
-$db_host = 'dev.internship.com';
+$db_host = 'db';
 $db_username = 'root';
 $db_password = 'Password1';
 $db_name = 'internship';
