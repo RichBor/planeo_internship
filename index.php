@@ -124,7 +124,7 @@ function getFilePath() {
                         case 'contact':
                             echo "
                             <p class='navp'><a class='a' href='index.php'>| Start |</a></p>
-                            <p class='navp''><a class='a' href='index.php?s=htmlandcss'>| HTML & CSS |</a></p>
+                            <p class='navp'><a class='a' href='index.php?s=htmlandcss'>| HTML & CSS |</a></p>
                             <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> 
                             <p class='navp'><a class='a' href='index.php?s=bmirechner'>| BMI Rechner |</a></p>
                             <p class='navp'><a class='a' href='index.php?s=isbnvalidator'>| ISBN Validator |</a></p>";
