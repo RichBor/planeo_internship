@@ -6,6 +6,8 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: php
+    volumes:
+      - .:/var/www/html
     user: root
     depends_on:
       - db
