@@ -110,7 +110,8 @@ function getFilePath() {
                             <p class='navp''><a class='a' href='index.php?s=htmlandcss'>| HTML & CSS |</p>
                             <p class='navp' id='currentsite'>| HTML Tags |</a></p> 
                             <p class='navp'><a class='a' href='index.php?s=bmirechner'>| BMI Rechner |</a></p>
-                            <p class='navp'><a class='a' href='index.php?s=isbnvalidator'>| ISBN Validator |</a></p>";
+                            <p class='navp'><a class='a' href='index.php?s=isbnvalidator'>| ISBN Validator |</a></p>
+                            <p class='navp'><a class='a' href='index.php?s=wurfel'>| Würfel |</a></p>";
                             break;
                         case 'htmlandcss':
                             echo "
@@ -118,7 +119,8 @@ function getFilePath() {
                             <p class='navp' id='currentsite'>| HTML & CSS |</p>
                             <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> 
                             <p class='navp'><a class='a' href='index.php?s=bmirechner'>| BMI Rechner |</a></p>
-                            <p class='navp'><a class='a' href='index.php?s=isbnvalidator'>| ISBN Validator |</a></p>";
+                            <p class='navp'><a class='a' href='index.php?s=isbnvalidator'>| ISBN Validator |</a></p>
+                            <p class='navp'><a class='a' href='index.php?s=wurfel'>| Würfel |</a></p>";
                             break;
                         case 'settings':
                         case 'contact':
@@ -127,7 +129,8 @@ function getFilePath() {
                             <p class='navp'><a class='a' href='index.php?s=htmlandcss'>| HTML & CSS |</a></p>
                             <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> 
                             <p class='navp'><a class='a' href='index.php?s=bmirechner'>| BMI Rechner |</a></p>
-                            <p class='navp'><a class='a' href='index.php?s=isbnvalidator'>| ISBN Validator |</a></p>";
+                            <p class='navp'><a class='a' href='index.php?s=isbnvalidator'>| ISBN Validator |</a></p>
+                            <p class='navp'><a class='a' href='index.php?s=wurfel'>| Würfel |</a></p>";
                             break;
                         case 'bmirechner':
                             echo "
@@ -135,7 +138,8 @@ function getFilePath() {
                             <p class='navp''><a class='a' href='index.php?s=htmlandcss'>| HTML & CSS |</a></p>
                             <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> 
                             <p class='navp' id='currentsite'>| BMI Rechner |</p>
-                            <p class='navp'><a class='a' href='index.php?s=isbnvalidator'>| ISBN Validator |</a></p>";
+                            <p class='navp'><a class='a' href='index.php?s=isbnvalidator'>| ISBN Validator |</a></p>
+                            <p class='navp'><a class='a' href='index.php?s=wurfel'>| Würfel |</a></p>";
                             break;
                         case 'isbnvalidator':
                             echo "
@@ -143,7 +147,17 @@ function getFilePath() {
                             <p class='navp''><a class='a' href='index.php?s=htmlandcss'>| HTML & CSS |</a></p>
                             <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> 
                             <p class='navp'><a class='a' href='index.php?s=bmirechner'>| BMI Rechner |</a></p>
-                            <p class='navp' id='currentsite'>| ISBN Validator |</p>";
+                            <p class='navp' id='currentsite'>| ISBN Validator |</p>
+                            <p class='navp'><a class='a' href='index.php?s=wurfel'>| Würfel |</a></p>";
+                            break;
+                        case 'wurfel':
+                            echo "
+                            <p class='navp'><a class='a' href='index.php'>| Start |</a></p>
+                            <p class='navp''><a class='a' href='index.php?s=htmlandcss'>| HTML & CSS |</a></p>
+                            <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> 
+                            <p class='navp'><a class='a' href='index.php?s=bmirechner'>| BMI Rechner |</a></p>
+                            <p class='navp'><a class='a' href='index.php?s=isbnvalidator'>| ISBN Validator |</a></p>
+                            <p class='navp' id='currentsite'>| Würfel |</p>";
                             break;
                         default:
                             echo "
@@ -151,7 +165,8 @@ function getFilePath() {
                             <p class='navp''><a class='a' href='index.php?s=htmlandcss'>| HTML & CSS |</a></p>
                             <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> 
                             <p class='navp'><a class='a' href='index.php?s=bmirechner'>| BMI Rechner |</a></p>
-                            <p class='navp'><a class='a' href='index.php?s=isbnvalidator'>| ISBN Validator |</a></p>";
+                            <p class='navp'><a class='a' href='index.php?s=isbnvalidator'>| ISBN Validator |</a></p>
+                            <p class='navp'><a class='a' href='index.php?s=wurfel'>| Würfel |</a></p>";
                     }
                 } else {
                     echo "<p class='navp' id='currentsite'>| Start |</p>";
@@ -235,24 +250,56 @@ function getFilePath() {
 
             switch($_GET["s"]) {
                 case 'tags':
-                    if(isset($_COOKIE["user"]))
-                    include "html/tags.html";
+                    if(isset($_COOKIE["user"])) {
+                        include "html/tags.html";
+                    } else {
+                        include "html/404.html";
+                    }
                     break;
                 case 'htmlandcss':
-                    if(isset($_COOKIE["user"]))
-                    include "html/htmlandcss.html";
+                    if(isset($_COOKIE["user"])) {
+                        include "html/htmlandcss.html";
+                    } else {
+                        include "html/404.html";
+                    }
                     break;
                 case 'contact':
-                    include "php/contact.php";
+                    if(isset($_COOKIE["user"])) {
+                        include "php/contact.php";
+                    } else {
+                        include "html/404.html";
+                    }
                     break;
                 case 'settings':
-                    include "php/settings.php";
+                    if(isset($_COOKIE["user"])) {
+                        include "php/settings.php";
+                    } else {
+                        include "html/404.html";
+                    }
                     break;
                 case 'bmirechner':
-                    include "php/bmirechner.php";
+                    if(isset($_COOKIE["user"])) {
+                        include "php/bmirechner.php";
+                    } else {
+                        include "html/404.html";
+                    }
                     break;
                 case 'isbnvalidator':
-                    include "php/isbnvalidator.php";
+                    if(isset($_COOKIE["user"])) {
+                        include "php/isbnvalidator.php";
+                    } else {
+                        include "html/404.html";
+                    }
+                    break;
+                case '404':
+                    include "html/404.html";
+                    break;
+                case 'wurfel':
+                    if(isset($_COOKIE["user"])) {
+                        include "html/wurfel.html";
+                    } else {
+                        include "html/404.html";
+                    }
                     break;
                 default:
                     if(isset($_COOKIE['user'])) {
