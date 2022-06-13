@@ -103,16 +103,24 @@ $bodyheightErr = $bodyweightErr = $confirmUpdate = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(!empty($_POST["bodyheight"])) {
         if(!empty($_POST["bodyweight"])) {
-            $bmi = "'".round(($_POST["bodyweight"] / ($_POST["bodyheight"]*$_POST["bodyheight"])), 2)."'";
-            $id="'".getuID()."'";
-            $weight ="'".$_POST["bodyweight"]."'";
-            $height ="'".$_POST["bodyheight"]."'";
-            $sql="SELECT * FROM bmirechner WHERE f_uID=$id";
-            $result=mysqli_query($conn, $sql);
-            $timestamp ="'".date("y.m.d")."'";
-            $sql="INSERT INTO bmirechner (f_UID, height, weight, bmi, insertdate) VALUES ($id,$height,$weight,$bmi, $timestamp)";
-            mysqli_query($conn, $sql);
-            $confirmUpdate = "Daten erfolgreich aktualisiert!";
+            if(is_numeric($_POST['bodyheight'])) {
+                if(is_numeric($_POST['bodyweight'])) {
+                    $bmi = "'".round(($_POST["bodyweight"] / ($_POST["bodyheight"]*$_POST["bodyheight"])), 2)."'";
+                    $id="'".getuID()."'";
+                    $weight ="'".$_POST["bodyweight"]."'";
+                    $height ="'".$_POST["bodyheight"]."'";
+                    $sql="SELECT * FROM bmirechner WHERE f_uID=$id";
+                    $result=mysqli_query($conn, $sql);
+                    $timestamp ="'".date("y.m.d")."'";
+                    $sql="INSERT INTO bmirechner (f_UID, height, weight, bmi, insertdate) VALUES ($id,$height,$weight,$bmi, $timestamp)";
+                    mysqli_query($conn, $sql);
+                    $confirmUpdate = "Daten erfolgreich aktualisiert!";
+                } else {
+                    $bodyweightErr="Gewicht ist keine Zahl. Versuch deine Kommazahl mit Punkten zu trennen!";
+                }
+            } else {
+                $bodyheightErr="Körpergröße ist keine Zahl. Versuch deine Kommazahl mit Punkten zu trennen!";
+            }
         } else {
             $bodyweightErr = "Körpergewicht ist leer!";
         }
