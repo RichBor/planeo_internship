@@ -116,10 +116,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     mysqli_query($conn, $sql);
                     $confirmUpdate = "Daten erfolgreich aktualisiert!";
                 } else {
-                    $bodyweightErr="Gewicht ist keine Zahl. Versuch deine Kommazahl mit Punkten zu trennen!";
+                    $bodyweightErr="Gewicht ist keine Zahl. Versuch deine Kommazahl mit einem Punkt zu trennen!";
                 }
             } else {
-                $bodyheightErr="Körpergröße ist keine Zahl. Versuch deine Kommazahl mit Punkten zu trennen!";
+                $bodyheightErr="Körpergröße ist keine Zahl. Versuch deine Kommazahl mit einem Punkt zu trennen!";
             }
         } else {
             $bodyweightErr = "Körpergewicht ist leer!";
