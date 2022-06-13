@@ -8,6 +8,7 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: php
+    user: root
     depends_on:
       - db
     ports:
