@@ -27,3 +27,4 @@ Funktionen mit einem LAMP-Setup:
 - BMI Rechner (Mit History Tabelle zum vergleichen und export to csv)
 - ISBN Validator
 - Fully Dockerized (docker-compose.yml mit docker öffnen=installiert den ganzen Webserver in Containern und kann von überall geöffnet werden)
+- Drehender Würfel programmiert mit WebGL
