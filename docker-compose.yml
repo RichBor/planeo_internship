@@ -2,8 +2,6 @@
 version : '3.7'
 services:
   web:
-    volumes:
-      - .:/var/www/html
     build:
       context: .
       dockerfile: Dockerfile
