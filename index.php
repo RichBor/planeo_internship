@@ -264,11 +264,7 @@ function getFilePath() {
                     }
                     break;
                 case 'contact':
-                    if(isset($_COOKIE["user"])) {
                         include "php/contact.php";
-                    } else {
-                        include "html/404.html";
-                    }
                     break;
                 case 'settings':
                     if(isset($_COOKIE["user"])) {
