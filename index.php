@@ -111,7 +111,8 @@ function getFilePath() {
                             <p class='navp' id='currentsite'>| HTML Tags |</a></p> 
                             <p class='navp'><a class='a' href='index.php?s=bmirechner'>| BMI Rechner |</a></p>
                             <p class='navp'><a class='a' href='index.php?s=isbnvalidator'>| ISBN Validator |</a></p>
-                            <p class='navp'><a class='a' href='index.php?s=wurfel'>| Würfel |</a></p>";
+                            <p class='navp'><a class='a' href='index.php?s=wurfel'>| Würfel |</a></p>
+                            <p class='navp'><a class='a' href='index.php?s=dog'>| Hunde API |</a></p>";
                             break;
                         case 'htmlandcss':
                             echo "
@@ -120,7 +121,8 @@ function getFilePath() {
                             <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> 
                             <p class='navp'><a class='a' href='index.php?s=bmirechner'>| BMI Rechner |</a></p>
                             <p class='navp'><a class='a' href='index.php?s=isbnvalidator'>| ISBN Validator |</a></p>
-                            <p class='navp'><a class='a' href='index.php?s=wurfel'>| Würfel |</a></p>";
+                            <p class='navp'><a class='a' href='index.php?s=wurfel'>| Würfel |</a></p>
+                            <p class='navp'><a class='a' href='index.php?s=dog'>| Hunde API |</a></p>";
                             break;
                         case 'settings':
                         case 'contact':
@@ -130,7 +132,8 @@ function getFilePath() {
                             <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> 
                             <p class='navp'><a class='a' href='index.php?s=bmirechner'>| BMI Rechner |</a></p>
                             <p class='navp'><a class='a' href='index.php?s=isbnvalidator'>| ISBN Validator |</a></p>
-                            <p class='navp'><a class='a' href='index.php?s=wurfel'>| Würfel |</a></p>";
+                            <p class='navp'><a class='a' href='index.php?s=wurfel'>| Würfel |</a></p>
+                            <p class='navp'><a class='a' href='index.php?s=dog'>| Hunde API |</a></p>";
                             break;
                         case 'bmirechner':
                             echo "
@@ -139,7 +142,8 @@ function getFilePath() {
                             <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> 
                             <p class='navp' id='currentsite'>| BMI Rechner |</p>
                             <p class='navp'><a class='a' href='index.php?s=isbnvalidator'>| ISBN Validator |</a></p>
-                            <p class='navp'><a class='a' href='index.php?s=wurfel'>| Würfel |</a></p>";
+                            <p class='navp'><a class='a' href='index.php?s=wurfel'>| Würfel |</a></p>
+                            <p class='navp'><a class='a' href='index.php?s=dog'>| Hunde API |</a></p>";
                             break;
                         case 'isbnvalidator':
                             echo "
@@ -148,7 +152,8 @@ function getFilePath() {
                             <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> 
                             <p class='navp'><a class='a' href='index.php?s=bmirechner'>| BMI Rechner |</a></p>
                             <p class='navp' id='currentsite'>| ISBN Validator |</p>
-                            <p class='navp'><a class='a' href='index.php?s=wurfel'>| Würfel |</a></p>";
+                            <p class='navp'><a class='a' href='index.php?s=wurfel'>| Würfel |</a></p>
+                            <p class='navp'><a class='a' href='index.php?s=dog'>| Hunde API |</a></p>";
                             break;
                         case 'wurfel':
                             echo "
@@ -157,7 +162,18 @@ function getFilePath() {
                             <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> 
                             <p class='navp'><a class='a' href='index.php?s=bmirechner'>| BMI Rechner |</a></p>
                             <p class='navp'><a class='a' href='index.php?s=isbnvalidator'>| ISBN Validator |</a></p>
-                            <p class='navp' id='currentsite'>| Würfel |</p>";
+                            <p class='navp' id='currentsite'>| Würfel |</p>
+                            <p class='navp'><a class='a' href='index.php?s=dog'>| Hunde API |</a></p>";
+                            break;
+                        case 'dog':
+                            echo "
+                            <p class='navp'><a class='a' href='index.php'>| Start |</a></p>
+                            <p class='navp''><a class='a' href='index.php?s=htmlandcss'>| HTML & CSS |</a></p>
+                            <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> 
+                            <p class='navp'><a class='a' href='index.php?s=bmirechner'>| BMI Rechner |</a></p>
+                            <p class='navp'><a class='a' href='index.php?s=isbnvalidator'>| ISBN Validator |</a></p>
+                            <p class='navp'><a class='a' href='index.php?s=wurfel'>| Würfel |</a></p>
+                            <p class='navp' id='currentsite'>| Hunde API |</p>";
                             break;
                         default:
                             echo "
@@ -166,7 +182,8 @@ function getFilePath() {
                             <p class='navp'><a class='a' href='index.php?s=tags'>| HTML Tags |</a></p> 
                             <p class='navp'><a class='a' href='index.php?s=bmirechner'>| BMI Rechner |</a></p>
                             <p class='navp'><a class='a' href='index.php?s=isbnvalidator'>| ISBN Validator |</a></p>
-                            <p class='navp'><a class='a' href='index.php?s=wurfel'>| Würfel |</a></p>";
+                            <p class='navp'><a class='a' href='index.php?s=wurfel'>| Würfel |</a></p>
+                            <p class='navp'><a class='a' href='index.php?s=dog'>| Hunde API |</a></p>";
                     }
                 } else {
                     echo "<p class='navp' id='currentsite'>| Start |</p>";
@@ -293,6 +310,13 @@ function getFilePath() {
                 case 'wurfel':
                     if(isset($_COOKIE["user"])) {
                         include "html/wurfel.html";
+                    } else {
+                        include "html/404.html";
+                    }
+                    break;
+                case 'dog':
+                    if(isset($_COOKIE["user"])) {
+                        include "php/dog.php";
                     } else {
                         include "html/404.html";
                     }
