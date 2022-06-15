@@ -28,3 +28,4 @@ Funktionen mit einem LAMP-Setup:
 - ISBN Validator
 - Fully Dockerized (docker-compose.yml mit docker öffnen=installiert den ganzen Webserver in Containern und kann von überall geöffnet werden)
 - Drehender Würfel programmiert mit WebGL (threejs library)
+- Zufälliger Hund mit Hunde API von [DogAPI](https://dog.ceo/dog-api/)
