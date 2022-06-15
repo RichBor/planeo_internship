@@ -1,17 +1,24 @@
 <?php
 session_start();
 
-if (isset($_GET['dogselect'])) {
-    if ($_GET['dogselect'] == "random") {
-        $dog_url="https://dog.ceo/api/breeds/image/random";
-    } else {
-        $dog_url="https://dog.ceo/api/breed/".$_GET['dogselect']."/images/random";
-    }
-    $dog_json = file_get_contents($dog_url);
-    $dog = json_decode($dog_json, true);
 
-    if($dog["status"]=="success") {
-        $_SESSION['img']=$dog["message"];
+
+if (isset($_GET['dogselect'])) {
+
+    $ch= curl_init();
+
+    curl_setopt($ch, CURLOPT_URL, 'https://dog.ceo/api/breeds/image/random');
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+    $server_response = curl_exec($ch);
+
+    curl_close($ch);
+
+    $server_response = json_decode($server_response, true);
+
+
+    if($server_response["status"]=="success") {
+        $_SESSION['img']=$server_response["message"];
     }
     header("Location: ../index.php?s=dog");
 }
